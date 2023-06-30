@@ -157,15 +157,15 @@ $$
     L(\mu,\sigma^2)
 =&\prod_{i=1}^nf(x_i,\mu,\sigma^2)\\
 =&\Big(\dfrac{1}{\sqrt{2\pi}\sigma}\Big)^n
-\prod_{i=1}^nx_i
-\exp \Big(\dfrac{1}{2\sigma^2}\sum_{i=1}^n(\ln x_i-\mu)^2\Big)
+\prod_{i=1}^nx_i^{-1}
+\exp \Big(-\dfrac{1}{2\sigma^2}\sum_{i=1}^n(\ln x_i-\mu)^2\Big)
 \end{aligned}
 $$
 
 $$
 \begin{aligned}
     &\ln L(\mu,\sigma^2)\\
-    =&-\dfrac{n}{2}\ln2\pi-\dfrac{n}{2}\ln\sigma^2+\sum_{i=1}^nx_i+\dfrac{1}{2\sigma^2}\Big(\sum_{i=1}^n(\ln x_i-\mu)^2\Big)
+    =&-\dfrac{n}{2}\ln2\pi-\dfrac{n}{2}\ln\sigma^2-\sum_{i=1}^nx_i-\dfrac{1}{2\sigma^2}\Big(\sum_{i=1}^n(\ln x_i-\mu)^2\Big)
 \end{aligned}
 $$
 
@@ -173,9 +173,9 @@ $$
 $$
 \begin{cases}
 \displaystyle
-    \dfrac{\partial}{\partial \mu }\ln L=\dfrac{1}{2\sigma^2}\sum_{i=1}^n(2\ln x_i+2\mu)=0\\
+    \dfrac{\partial}{\partial \mu }\ln L=\dfrac{1}{2\sigma^2}\sum_{i=1}^n(2\ln x_i-2\mu)=0\\
 \displaystyle
-    \dfrac{\partial}{\partial \sigma^2}\ln L=\dfrac{n}{2\sigma^2}-\dfrac{1}{2(\sigma^2)^2}\Big(\sum_{i=1}^n(\ln x_i-\mu)^2\Big)=0
+    \dfrac{\partial}{\partial \sigma^2}\ln L=-\dfrac{n}{2\sigma^2}+\dfrac{1}{2(\sigma^2)^2}\Big(\sum_{i=1}^n(\ln x_i-\mu)^2\Big)=0
 \end{cases}
 $$
 
