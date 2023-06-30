@@ -71,8 +71,8 @@ $$
     \item 一个正态总体下 $\sigma^2$ 已知, 
     随机变量 $J=\sqrt{n}\dfrac{(\bar{X}-\mu)}{\sigma}$ 服从标准正态分布, 
     因此取 $\alpha=0.1$. 则 $\mu\in[\mu_0,\mu_1]$, 
-    $\mu_0=\bar{X}-\mu_{1-\frac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}$, 
-    $\mu_1=\bar{X}+\mu_{1-\frac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}$. 得到 $\bar{X}=2.125$, 即 $\mu_0=2.125-1.6448\cdot\dfrac{0.01}{\sqrt{16}}=2.1209$, 同理 $\mu_1=2.1291$. 
+    $\mu_0=\bar{X}-u_{1-\frac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}$, 
+    $\mu_1=\bar{X}+u_{1-\frac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}$. 得到 $\bar{X}=2.125$, 即 $\mu_0=2.125-1.6448\cdot\dfrac{0.01}{\sqrt{16}}=2.1209$, 同理 $\mu_1=2.1291$. 
     \mymathbox{[2.1209,2.1291]}
     \item 一个正态总体下 $\sigma^2$ 未知, 随机变量 $J=\sqrt{n}\dfrac{(\bar{X}-\mu)}{S}$ 服从 $t(n-1)$ 分布, 取 $\alpha=0.01$, 则 $\mu\in[\mu_0,\mu_1]$, $\mu_0=\bar{X}-t_{1-\frac{\alpha}{2}}(n-1)\dfrac{S}{\sqrt{n}}$, $\mu_1=\bar{X}+t_{1-\frac{\alpha}{2}}(n-1)\dfrac{S}{\sqrt{n}}$. 得到 $\bar{X}=2.125,\;S=0.0171$, 即 $\mu_0=2.125-1.7531\cdot\dfrac{0.0171}{\sqrt{16}}=2.1175$, $\mu_1=2.1325$. 
     \mymathbox{[2.1175,2.1325]}
@@ -83,7 +83,8 @@ $$
 
 25. 甲乙两位化验员独立地对一种聚合物的含氯量用相同的方法各做了 10 次测定, 得 $s^2=0.5419,\;s_2^2=0.6050$. 求他们测定值得方差比得双侧 $90\%$ 置信区间, 假定测定值服从正态分布.
 
-\textbf{Sol}: 两个正态总体下 $\mu_1,\mu_2$ 未知, 随机变量 $J=\dfrac{s_1^2/\sigma_1^2}{s_2^2/\sigma_2^2}$ 服从 $F(m-1,n-1)$ 分布, 因此, 取 $\alpha=0.1$, 则 $\dfrac{\sigma_1^2}{\sigma_2^2}\in[k_0,k_1]$, $k_0=\dfrac{s_1^2}{s_2^2}\cdot\dfrac{1}{F_{1-\frac{\alpha}{2}}(m-1,n-1)}$, $k_1=\dfrac{s_1^2}{s_2^2}\cdot\dfrac{1}{F_{\frac{\alpha}{2}}(m-1,n-1)}$.
+\textbf{Sol}: 
+两个正态总体下 $\mu_1,\mu_2$ 未知, 随机变量 $J=\dfrac{s_1^2/\sigma_1^2}{s_2^2/\sigma_2^2}$ 服从 $F(m-1,n-1)$ 分布, 因此, 取 $\alpha=0.1$, 则 $\dfrac{\sigma_1^2}{\sigma_2^2}\in[k_0,k_1]$, $k_0=\dfrac{s_1^2}{s_2^2}\cdot\dfrac{1}{F_{1-\frac{\alpha}{2}}(m-1,n-1)}$, $k_1=\dfrac{s_1^2}{s_2^2}\cdot\dfrac{1}{F_{\frac{\alpha}{2}}(m-1,n-1)}$.
 
 得到, $k_0=\dfrac{s_1^2}{s_2^2}\cdot\dfrac{1}{F_{1-\frac{\alpha}{2}}(m-1,n-1)}=\dfrac{0.5419}{0.6050}\cdot\dfrac{1}{F_{0.95}(9,9)}=0.2818$, $k_1=\dfrac{s_1^2}{s_2^2}\cdot\dfrac{1}{F_{\frac{\alpha}{2}}(m-1,n-1)}=\dfrac{0.5419}{0.6050}\cdot\dfrac{1}{F_{0.05}(9,9)}=2.8471$.
 
