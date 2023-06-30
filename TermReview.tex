@@ -1,0 +1,145 @@
+\documentclass[a4paper, draft]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+\usepackage{diagbox}
+\usepackage{multirow}
+
+\title{\vspace{-5cm}期末急速复习}
+\author{Luokey}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    仅用于工程数学期末急速复习, 简单了解原理(如果我愿意写的话), 了解解题时的一些注意事项.
+\end{abstract}
+
+\section{喵}
+
+\subsection*{1}
+
+因为有限维线性空间加法是可交换的, 因此当成正常解方程就行.
+
+\subsection*{2}
+
+证明是一组向量是一个空间的一组基, 就是证明这组向量之间线性无关, 并且向量数与空间维数相同, 求这个基下的坐标就是
+
+证明线性无关这里举两种方法(假设有 $n$ 个 $n$ 维向量):  
+
+\begin{enumerate}
+    \item 令 $k_1\alpha_1+k_2\alpha_2+\cdots+k_n\alpha_n=0$, 解出 $k_i=0$ 为唯一解即可证明.
+    \item 设矩阵 $A=[\alpha_1\;\alpha_2\;\cdots\;\alpha_n]$, 计算 $|A|\not=0$ 即可证明.
+\end{enumerate}
+
+$\beta=n_1\alpha_1+n_2\alpha_2+n_3\alpha_3$, 然后解出 $n_1,n_2,n_3$ 就得到以 $\{\alpha_1,\alpha_2,\alpha_3\}$ 为基的坐标 $[n_1,n_2,n_3]$
+
+\subsection*{3}
+
+通过 $\text{Schmidt}$ 正交化计算标准正交基的过程
+
+\begin{enumerate}
+    \item 第一个向量不变, 得到 $\beta_1$
+    \item 第二个向量减去与 $\beta_1$ 同方向的部分, 即减去 $\dfrac{(\alpha_2,\beta_1)}{(\beta_1,\beta_1)}\beta_1$
+    \item 第三个向量减去与 $\beta_1,\beta_2$ 同方向的部分
+    \item 直到最后一个向量减去与前面所有得到的 $\beta$ 向量同方向的部分
+    \item 将所有得到的 $\beta_i$ 进行单位化, 得到 $\eta_i$
+\end{enumerate}
+
+例如:  
+我们有 $n$ 个向量 $\alpha_1,\alpha_2,\cdots,\alpha_n$
+$$
+\begin{aligned}
+    &\beta_1=\alpha_1\\
+    &\beta_2=\alpha_2-\dfrac{(\alpha_2,\beta_1)}{(\beta_1,\beta_1)}\beta_1\\
+    &\cdots\\
+    &\beta_n=\alpha_n-\dfrac{(\alpha_n,\beta_1)}{(\beta_1,\beta_1)}\beta_1-\cdots-\dfrac{(\alpha_n,\beta_{n-1})}{(\beta_{n-1},\beta_{n-1})}\beta_{n-1}
+\end{aligned}
+$$
+
+然后单位化:  
+
+$$
+\begin{aligned}
+    &\eta_1=\dfrac{\beta_1}{|\beta_1|}\\
+    &\eta_2=\dfrac{\beta_2}{|\beta_2|}\\
+    &\cdots\\
+    &\eta_n=\dfrac{\beta_n}{|\beta_n|}    
+\end{aligned}
+$$
+
+然后我们就得到了想要的一组单位正交基 $\eta_1,\eta_2,\cdots,\eta_n$.
+
+这里的 $(\alpha,\beta)$ 是内积, 
+设 $\alpha=(a_1,a_2,\cdots,a_n)^{\text{T}}$, $\beta=(b_1,b_2,\cdots,b_n)^{\text{T}}$, 
+计算方法为 $(\alpha,\beta)=\alpha^{\text{T}}\beta=\sum a_ib_i$.
+
+这个是只有实数情况下的计算方法(这是个伏笔).
+
+注: 之后就认为你会计算正交化了, 不再赘述.
+
+\subsection*{4}
+
+要会求矩阵的逆, 我一般用增广的方法, 比如求 $A^{-1}$, 就是对 $[A|I]$ 进行初等\textbf{行}变换(这里加粗了!), 变成 $[I|A^{-1}]$. 就求出来了. 
+那么可能有人会问, 欸? 你什么这样算出来就是逆呢? 那我们先假设我们要求的矩阵 $A$ 有逆, 那么是不是有性质 $A^{-1}A=E=I$, 因此通过行变换, 
+就相当于在求逆, 我们通过一个 $I$ 进行统计我们的行变换, 当 $A$ 变成 $I$ 时, 相当于 $A^{-1}[A|I]=[I|A^{-1}]$. 因此我们只做行变换得到的也是 $A^{-1}$.
+
+
+因此得到 $A=PBP^{-1}$, 我们在求矩阵的高次方的时候, 经常都通过这种方式, 
+中间的 $B$ 是一个简单矩阵, 那么就有 $A^n=(PBP^{-1})\cdots(PBP^{-1})=PB^nP^{-1}$, 
+中间的 $P^{-1}P=E$ 就两两消去了.
+
+注: 判断一个方阵 $A$ 有没有逆, 最简单的方法就是看行列式, $|A|\not=0$ 则存在逆.
+
+
+\subsection*{5}
+
+这个比较显然是可以搞成分块矩阵来计算的. 有结论
+
+$$
+\begin{bmatrix}
+    A & 0\\
+    0 & B\\
+\end{bmatrix}=
+\begin{bmatrix}
+    A & 0\\
+    C & B\\
+\end{bmatrix}=
+\begin{bmatrix}
+    A & D\\
+    0 & B\\
+\end{bmatrix}=|A|\cdot|B|
+$$
+
+其中 $A,B$ 是方阵即可.
+
+然后还有结论, 若 $A$ 可逆, 则有 $A^{-1}A=AA^{-1}=E$, 
+且 $|AA^{-1}|=|A|\cdot|A^{-1}|=1$, 
+且 $|A^{-1}|=|A|^{-1}$(这个其实是前面一条推出来的).
+
+\subsection*{6}
+
+根据总体 $X$, 求样本 $X_1,X_2,\cdots,X_n$ 的该概率函数或概率密度.
+
+顺序:  
+
+\begin{enumerate}
+    \item 已知总体的概率密度 $f(x)$
+    \item 所求的概率密度为 $f(x_1,x_2,\cdots,x_n)=f(x_1)f(x_2)\cdots f(x_n)$.
+\end{enumerate}
+
+注:  
+1. 需要知道参数为 $\lambda$ 的 $\text{Poission}$ 分布, $P(X=k)=\dfrac{\lambda^k}{k!}e^{-\lambda},k=0,1,2,\cdots$.
+
+\subsection*{7}
+
+求可逆矩阵 $P$ 使得 $PA$ 为 Hermite 阶梯型矩阵, 
+其实这个思路和求矩阵的逆是一样的, $[A|I]\rightarrow P[A|I]=[H|P]$, 
+因此我们知道对 $[A|I]$ 做初等行变换, 使得 $A$ 变为 $H$ 即可得到所求的 $P$.
+
+\end{document}
