@@ -13,7 +13,8 @@
 
 \textbf{Sol}: 
 
-(1) $X$ 服从参数为 $\lambda$ 的 $Poisson$ 分布为 $P(X=k)=\dfrac{\lambda^k}{k!}e^{-\lambda},k=0,1,\cdots$, $P(X_1=x_1,X_2=x_2,X_3=x_3)=\mybox{$\dfrac{\lambda_{x_1+x_2+x_3}\cdot e^{-3\lambda}}{x_1!\cdot x_2!\cdot x_3!}$}$.\par
+(1) $X$ 服从参数为 $\lambda$ 的 $Poisson$ 分布为 $P(X=k)=\dfrac{\lambda^k}{k!}e^{-\lambda},k=0,1,\cdots$, 
+$P(X_1=x_1,X_2=x_2,X_3=x_3)=\mymathbox{\dfrac{\lambda_{x_1+x_2+x_3}\cdot e^{-3\lambda}}{x_1!\cdot x_2!\cdot x_3!}}$.\par
 
 (2) $X$ 服从参数为 $\lambda$ 的 $f(x)=\begin{cases}
     \lambda e^{-\lambda x}, &x>0,\\
@@ -21,37 +22,34 @@
 \end{cases},$  
 \newline
 $f(x_1,x_2,x_3)=f(x_1)f(x_2)f(x_3)=
-\mybox{
-$\begin{cases}
+\mymathbox{
+\begin{cases}
     \lambda^3 e^{-\lambda(x_1+x_2+x_3)},&x_1>0,x_2>0,and \;x_3>0,\\
     0,&x_1\leqslant 0,x_2\leqslant 0,or\;x_3\leqslant0.
-\end{cases}$
-}$\par
+\end{cases}}$\par
 
 
 (3) $X$ 在区间 $(a,b)$ 上服从均匀分布 $f(x)=\begin{cases}
     \frac{1}{b-a},&a<x<b\\
     0,&else
 \end{cases}$, 则 $f(x_1,x_2,x_3)=f(x_1)f(x_2)f(x_3)=
-\mybox{
-$\begin{cases}
+\mymathbox{
+\begin{cases}
     \dfrac{1}{(b-a)^3},&a<x_1,x_2,x_3<b\\
     0,&else.
-\end{cases}$
-}$\par
+\end{cases}}$\par
 
 (4) $X$ 服从参数为 $a,b$ 的 $\beta$ 分布, 
 $$
 \begin{aligned}
     &f(x_1,x_2,x_3)
     =f(x_1)f(x_2)f(x_3)\\
-    =&\mybox{
-    $\begin{cases}
+    =&\mymathbox{
+    \begin{cases}
         \left[\dfrac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}\right]^3(x_1x_2x_3)^{a-1}\times\\
         \quad\quad\quad [(1-x_1)(1-x_2)(1-x_3)]^{b-1]},&0<x_1,x_2,x_3<1,\\
         0,&else.\\
-    \end{cases}$
-    }
+    \end{cases}}
 \end{aligned}
 $$
 

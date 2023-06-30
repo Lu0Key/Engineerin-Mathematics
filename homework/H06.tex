@@ -19,14 +19,14 @@
 对于 $\lambda_3=5$, 解线性方程组 $(A-\lambda I)x=0$, 得一个基础解系 $x_3=[1,2,-2]^T$, 单位化后得 $\varepsilon_3=\frac{1}{3}[1,2,-2]^T$.
 
 于是, 令 $Q=[\varepsilon_1\;\varepsilon_2\;\varepsilon_3]
-=\mybox{
-$\dfrac{1}{3}\begin{bmatrix}
+=\mymathbox{
+\dfrac{1}{3}\begin{bmatrix}
     2&2&1\\
     -2&1&2\\
     -1&2&-2\\
-\end{bmatrix}^T$
-}$, 则 $Q$ 为正交矩阵, 
-且经正交线性变换 $x=Qy$, 二次型 $f$ 转化为 $\mybox{$f=-y_1^2+2y_2^2+5y_3^2$}$.
+\end{bmatrix}^T}$
+, 则 $Q$ 为正交矩阵, 
+且经正交线性变换 $x=Qy$, 二次型 $f$ 转化为 $\mymathbox{f=-y_1^2+2y_2^2+5y_3^2}$.
 
 \vspace{12pt}
 
@@ -47,7 +47,7 @@ $$
     1&0&1-t
 \end{vmatrix}=t(t+1)(t+2)>0$. 
 
-解得 \mybox{$t\in(-1,0)$}, 此时 $f$ 为正定二次型.
+解得 \mymathbox{t\in(-1,0)}, 此时 $f$ 为正定二次型.
 
 
 \vspace{12pt}
@@ -68,10 +68,14 @@ $$
 \textbf{Sol}: 
 
 \begin{enumerate}[(1)]
-    \item 一个正态总体下 $\sigma^2$ 已知, 随机变量 $J=\sqrt{n}\dfrac{(\bar{X}-\mu)}{\sigma}$ 服从标准正态分布, 因此取 $\alpha=0.1$. 则 $\mu\in[\mu_0,\mu_1]$, $\mu_0=\bar{X}-\mu_{1-\frac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}$, $\mu_1=\bar{X}+\mu_{1-\frac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}$. 得到 $\bar{X}=2.125$, 即 $\mu_0=2.125-1.6448\cdot\dfrac{0.01}{\sqrt{16}}=2.1209$, 同理 $\mu_1=2.1291$. 
-    \mybox{$[2.1209,2.1291]$}
+    \item 一个正态总体下 $\sigma^2$ 已知, 
+    随机变量 $J=\sqrt{n}\dfrac{(\bar{X}-\mu)}{\sigma}$ 服从标准正态分布, 
+    因此取 $\alpha=0.1$. 则 $\mu\in[\mu_0,\mu_1]$, 
+    $\mu_0=\bar{X}-\mu_{1-\frac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}$, 
+    $\mu_1=\bar{X}+\mu_{1-\frac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}$. 得到 $\bar{X}=2.125$, 即 $\mu_0=2.125-1.6448\cdot\dfrac{0.01}{\sqrt{16}}=2.1209$, 同理 $\mu_1=2.1291$. 
+    \mymathbox{[2.1209,2.1291]}
     \item 一个正态总体下 $\sigma^2$ 未知, 随机变量 $J=\sqrt{n}\dfrac{(\bar{X}-\mu)}{S}$ 服从 $t(n-1)$ 分布, 取 $\alpha=0.01$, 则 $\mu\in[\mu_0,\mu_1]$, $\mu_0=\bar{X}-t_{1-\frac{\alpha}{2}}(n-1)\dfrac{S}{\sqrt{n}}$, $\mu_1=\bar{X}+t_{1-\frac{\alpha}{2}}(n-1)\dfrac{S}{\sqrt{n}}$. 得到 $\bar{X}=2.125,\;S=0.0171$, 即 $\mu_0=2.125-1.7531\cdot\dfrac{0.0171}{\sqrt{16}}=2.1175$, $\mu_1=2.1325$. 
-    \mybox{$[2.1175,2.1325]$}
+    \mymathbox{[2.1175,2.1325]}
 \end{enumerate}
 
 
@@ -83,15 +87,16 @@ $$
 
 得到, $k_0=\dfrac{s_1^2}{s_2^2}\cdot\dfrac{1}{F_{1-\frac{\alpha}{2}}(m-1,n-1)}=\dfrac{0.5419}{0.6050}\cdot\dfrac{1}{F_{0.95}(9,9)}=0.2818$, $k_1=\dfrac{s_1^2}{s_2^2}\cdot\dfrac{1}{F_{\frac{\alpha}{2}}(m-1,n-1)}=\dfrac{0.5419}{0.6050}\cdot\dfrac{1}{F_{0.05}(9,9)}=2.8471$.
 
-\mybox{$[0.2818,2.8471]$}
-
+\mymathbox{[0.2818,2.8471]}
 
 \vspace{12pt}
 
-
 26. 设从某种型号的一大批晶体管中随机抽取 100 只样品, 测得其寿命标准差 $s=45$ 小时, 求这批晶体管寿命标准差 $\sigma$ 得双侧 $95\%$ 置信区间.
 
-\textbf{Sol}: 根据辛钦中心极限定理, 设随机变量 $x_1,x_2,\cdots,x_n$ 相互独立, 服从同一分布且有有限的数学期望 $\mu$ 和方差 $\sigma^2$, 则随机变量 $\bar{x}=\dfrac{\sum x_i}{n}$, 满足 $\bar{x}\sim N(\mu,\dfrac{\sigma^2}{n})$. 一个正态总体在 $\mu$ 未知时, $J=\dfrac{1}{\sigma^2}\sum_{i=1}^n(X_i-\bar{X})^2$ 服从 $\chi^2(n-1)$ 分布, 则有 $\sigma^2\in[\sigma_0^2,\sigma_1^2]$. $\sigma_0^2=\dfrac{\sum_{i=1}^n(X_i-\bar{X})^2}{\chi_{1-\frac{\alpha}{2}}^2(n-1)}$, $\sigma_1^2=\dfrac{\sum_{i=1}^n(X_i-\bar{X})^2}{\chi_{\frac{\alpha}{2}}^2(n-1)}$, 得到 $\sigma_0^2=\dfrac{\sum_{i=1}^n(X_i-\bar{X})^2}{\chi_{1-\frac{\alpha}{2}}^2(n-1)}=\dfrac{(n-1)S^2}{\chi_{1-\frac{\alpha}{2}}^2(n-1)}=\dfrac{99\cdot45^2}{\chi^2_{0.975}(99)}\approx1561.1$, 同理可得 $\sigma_1^2\approx2732.7$, 即 $\sigma^2\in[1561.1, 2732.7]$. 因此标准差的 $90\%$ 置信区间为:  \mybox{$\sigma\in[39.51, 52.28]$}.
+\textbf{Sol}: 根据辛钦中心极限定理, 设随机变量 $x_1,x_2,\cdots,x_n$ 相互独立, 服从同一分布且有有限的数学期望 $\mu$ 和方差 $\sigma^2$, 
+则随机变量 $\bar{x}=\dfrac{\sum x_i}{n}$, 满足 $\bar{x}\sim N(\mu,\dfrac{\sigma^2}{n})$. 一个正态总体在 $\mu$ 未知时, 
+$J=\dfrac{1}{\sigma^2}\sum_{i=1}^n(X_i-\bar{X})^2$ 服从 $\chi^2(n-1)$ 分布, 则有 $\sigma^2\in[\sigma_0^2,\sigma_1^2]$. $\sigma_0^2=\dfrac{\sum_{i=1}^n(X_i-\bar{X})^2}{\chi_{1-\frac{\alpha}{2}}^2(n-1)}$, $\sigma_1^2=\dfrac{\sum_{i=1}^n(X_i-\bar{X})^2}{\chi_{\frac{\alpha}{2}}^2(n-1)}$, 得到 $\sigma_0^2=\dfrac{\sum_{i=1}^n(X_i-\bar{X})^2}{\chi_{1-\frac{\alpha}{2}}^2(n-1)}=\dfrac{(n-1)S^2}{\chi_{1-\frac{\alpha}{2}}^2(n-1)}=\dfrac{99\cdot45^2}{\chi^2_{0.975}(99)}\approx1561.1$, 同理可得 $\sigma_1^2\approx2732.7$, 即 $\sigma^2\in[1561.1, 2732.7]$. 
+因此标准差的 $90\%$ 置信区间为:  \mymathbox{\sigma\in[39.51, 52.28]}.
 
 
 \vspace{12pt}

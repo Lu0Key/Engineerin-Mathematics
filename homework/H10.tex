@@ -28,8 +28,8 @@ $$
 \end{bmatrix}P^{-1}$, 因此
 
 $$
-\mybox{
-$\begin{aligned}
+\mymathbox{
+\begin{aligned}
     e^{\text{A}}
     =&\dfrac{1}{25}\begin{bmatrix}
         3&1&\dfrac{4}{7}\\
@@ -51,13 +51,12 @@ $\begin{aligned}
         0&25e^{-1}&0\\
         10e^{4}-10e^{-1}&8e^{4}+27e^{-1}&10e^{4}+15e^{-1}\\
     \end{bmatrix}
-\end{aligned}$
-}
+\end{aligned}}
 $$
 
 $$
-\mybox{
-$\begin{aligned}
+\mymathbox{
+\begin{aligned}
     e^{\text{A}t}
     =&\dfrac{1}{25}\begin{bmatrix}
         3&1&\dfrac{4}{7}\\
@@ -79,8 +78,7 @@ $\begin{aligned}
         0&25e^{-t}&0\\
         10e^{4t}-10e^{-t}&8e^{4t}-(8-35t)e^{-t}&10e^{4t}+15e^{-t}\\
     \end{bmatrix}
-\end{aligned}$
-}
+\end{aligned}}
 $$
 
 \vspace{12pt}
@@ -116,16 +114,15 @@ $$
 $$
 \begin{aligned}
     A=&LDL^{\text{T}}=LD^{\frac{1}{2}}D^{\frac{1}{2}}L^{\text{T}}=GG^{T}\\
-    =&\mybox{
-    $\begin{bmatrix}
+    =&\mymathbox{
+    \begin{bmatrix}
         1&&\\-\dfrac{1}{4}&1&\\\dfrac{1}{4}&\dfrac{3}{4}&1
     \end{bmatrix}\begin{bmatrix}
         4&&\\&4&\\&&1
     \end{bmatrix}\begin{bmatrix}
         1&-\dfrac{1}{4}&\dfrac{1}{4}\\
         &1&\dfrac{3}{4}\\&&1
-    \end{bmatrix}$
-    }\\
+    \end{bmatrix}}\\
     =&\begin{bmatrix}
         1&&\\-\dfrac{1}{4}&1&\\\dfrac{1}{4}&\dfrac{3}{4}&1
     \end{bmatrix}\begin{bmatrix}
@@ -136,15 +133,14 @@ $$
         1&-\dfrac{1}{4}&\dfrac{1}{4}\\
         &1&\dfrac{3}{4}\\&&1
     \end{bmatrix}\\
-    =&\mybox{
-    $\begin{bmatrix}
+    =&\mymathbox{
+    \begin{bmatrix}
         2&&\\-\dfrac{1}{2}&2&\\\dfrac{1}{2}&\dfrac{3}{2}&1\\
     \end{bmatrix}\begin{bmatrix}
         2\\-\dfrac{1}{2}&\dfrac{1}{2}\\
         &2&\dfrac{3}{2}\\
         &&1\\
-    \end{bmatrix}$
-    }
+    \end{bmatrix}}
 \end{aligned}
 $$
 \vspace{12pt}
@@ -197,7 +193,7 @@ $$
 \end{cases}
 $$
 
-解得 \mybox{$x=[-1,\;0,\;1]^{\text{T}}$}
+解得 \mymathbox{x=[-1,\;0,\;1]^{\text{T}}}
 
 
 \vspace{12pt}
@@ -210,7 +206,7 @@ $$
  
 \textbf{Sol}: 由于 $A^{\text{T}}A=\begin{bmatrix}
     5&2\\2&5\\
-\end{bmatrix}$ 的特征值为 $\lambda_1=3,\;\lambda_2=7$, 故 $A$ 的奇异值为\mybox{ $\sqrt{3},\;\sqrt{7}$}. 其中, $A^{\text{T}}A$ 属于特征值 3 的单位特征向量为 $v_1=[\dfrac{\sqrt{2}}{2}\;-\dfrac{\sqrt{2}}{2}]^{\text{T}}$, 属于特征值 $7$ 的单位特征向量为 $v_2=[\dfrac{\sqrt{2}}{2}\;\dfrac{\sqrt{2}}{2}]^{\text{T}}$.
+\end{bmatrix}$ 的特征值为 $\lambda_1=3,\;\lambda_2=7$, 故 $A$ 的奇异值为\mymathbox{\sqrt{3},\;\sqrt{7}}. 其中, $A^{\text{T}}A$ 属于特征值 3 的单位特征向量为 $v_1=[\dfrac{\sqrt{2}}{2}\;-\dfrac{\sqrt{2}}{2}]^{\text{T}}$, 属于特征值 $7$ 的单位特征向量为 $v_2=[\dfrac{\sqrt{2}}{2}\;\dfrac{\sqrt{2}}{2}]^{\text{T}}$.
 
 $V=[v_1|v_2]=\dfrac{\sqrt{2}}{2}\begin{bmatrix}
     1&1\\-1&1\\
@@ -247,7 +243,8 @@ $$
 
 因此 
 
-\mybox{$A=U\begin{bmatrix}
+\mymathbox{
+A=U\begin{bmatrix}
     \sqrt{3}&\\&\sqrt{7}\\
 \end{bmatrix}V^T=\dfrac{\sqrt{2}}{2}\begin{bmatrix}
     \dfrac{1}{\sqrt{6}}&\dfrac{3}{\sqrt{14}}\\
@@ -257,7 +254,7 @@ $$
     \sqrt{3}&\\&\sqrt{7}\\
 \end{bmatrix}\begin{bmatrix}
     1&-1\\1&1\\
-\end{bmatrix}$}
+\end{bmatrix}}
 
 \vspace{12pt}
 

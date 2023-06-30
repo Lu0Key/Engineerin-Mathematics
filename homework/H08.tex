@@ -12,7 +12,7 @@
 
 应用 $\text{F}$ 检验, 得到检验统计量的观测值为 $\dfrac{s_1^2}{s_2^2}=1.108$, 而在显著水平 $\alpha=0.05$ 下, $F_{0.975}(5,5)=7.1464,\;F_{0.025}(5,5)=F^{-1}_{0.975}(5,5)=0.1399$. 显然 $0.1399<1.108<7.1464$, 
 所以不能拒绝 $H_0$, 
-\mybox{可以认为这两个正态总体的方差相等}。
+\mytextbox{可以认为这两个正态总体的方差相等}. 
 
 
 \vspace{12pt}
@@ -24,7 +24,11 @@
 根据泊松分布, 检验统计量的观测值为 $\bar{x}=5.85$, 
 由于 $n=100$ 较大, 所以近似地有： $\sqrt{n}\dfrac{\bar{x}-E(x)}{s}\sim N(0;1)$
 
-由 $\text{Poisson}$ 分布性质可得, $E(x)=\lambda,\;s=\sqrt{\lambda}$, 因此检验统计量观测值为：$\sqrt{100}\dfrac{|5.85-6|}{\sqrt{6}}\approx0.6124$, 又因为 $\alpha=0.1$, 因此 $\u_{1-\frac{\alpha}{2}}=u_{0.95}\approx1.645$, 显然 $1.645>0.6124$, 所以不能拒绝 $H_0$。即可以认为\mybox{服从 $\lambda=6$ 的 $\text{Poisson}$ 分布}.
+由 $\text{Poisson}$ 分布性质可得, $E(x)=\lambda,\;s=\sqrt{\lambda}$, 
+因此检验统计量观测值为：$\sqrt{100}\dfrac{|5.85-6|}{\sqrt{6}}\approx0.6124$, 
+又因为 $\alpha=0.1$, 因此 $u_{1-\frac{\alpha}{2}}=u_{0.95}\approx1.645$, 
+显然 $1.645>0.6124$, 所以不能拒绝 $H_0$。
+即可以认为\mytextbox{服从 $\lambda=6$ 的 $\text{Poisson}$ 分布}.
 
 
 
@@ -61,13 +65,13 @@ $$
     $$
     由于 $\bar{X}\sim N(\mu;\dfrac{1}{n})$, 故 $\sqrt{n}(\bar{X}-\mu)\sim N(0;1)$, 所以记 $\Phi(x)$ 为标准正态分布 $N(0;1)$ 的分布函数, 则有
     $$
-    \mybox{
-        $\beta(\mu)=1-\Phi(u_{1-\alpha}+\sqrt{n}\cdot \mu),\;\mu\in\Theta=\{\mu_0;\mu_1\}$
+    \mymathbox{
+        \beta(\mu)=1-\Phi(u_{1-\alpha}+\sqrt{n}\cdot \mu),\;\mu\in\Theta=\{\mu_0;\mu_1\}
     }.
     $$
     
     \item 依题意 $1-\beta(\mu)\leqslant 0.05$, 则 $\Phi(u_{1-\alpha}+\sqrt{n}\cdot \mu)\geqslant 1-\beta(\mu)$, 
-    $\sqrt{n}\geqslant \dfrac{u_{1-\alpha}+\Phi^{-1}(1-\beta(\mu))}{\mu}=\dfrac{u_{0.95}+u_{0.95}}{0.1}\approx32.898$,$n\geqslant32.898^2\approx 1082.28$, 即样本数量至少为 \mybox{1083} 个。
+    $\sqrt{n}\geqslant \dfrac{u_{1-\alpha}+\Phi^{-1}(1-\beta(\mu))}{\mu}=\dfrac{u_{0.95}+u_{0.95}}{0.1}\approx32.898$,$n\geqslant32.898^2\approx 1082.28$, 即样本数量至少为 \mytextbox{1083} 个。
 \end{enumerate}
 
 \vspace{12pt}

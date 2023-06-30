@@ -23,13 +23,12 @@ $A=X\begin{bmatrix}
     &0&\\
     &&-1\\
 \end{bmatrix}X^{-1}
-=\mybox{
-$\dfrac{1}{3}\begin{bmatrix}
+=\mymathbox{
+\dfrac{1}{3}\begin{bmatrix}
     -1&0&2\\
     0&1&2\\
     2&2&0\\
-\end{bmatrix}$
-}$.
+\end{bmatrix}}$.
 
 $A^8=X\begin{bmatrix}
     1&&\\
@@ -40,13 +39,12 @@ $A^8=X\begin{bmatrix}
     &0&\\
     &&1\\
 \end{bmatrix}X^{-1}
-=\mybox{
-$\dfrac{1}{9}\begin{bmatrix}
+=\mymathbox{
+\dfrac{1}{9}\begin{bmatrix}
     5&4&-2\\
     4&5&2\\
     -2&2&8
-\end{bmatrix}$
-}$.
+\end{bmatrix}}$.
 
 
 \vspace{12pt}
@@ -76,13 +74,13 @@ $$
 
 对于 $\lambda_2=\lambda_3=1$, 由 $|A-\lambda_2I|X=0$ 得到 $2x_1-2x_2+x_3=0$ 及一个解 $x_2=[1,1,0]^T$, $x_3=[-1,1,4]^T$, 单位化得到 $\varepsilon_2=[\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}},0]^T$, $\varepsilon_3=[-\frac{1}{3\sqrt{2}},\frac{1}{3\sqrt{2}},\frac{4}{3\sqrt{2}}]^T$.
 
-令 $\mybox{
-$Q=[\varepsilon_1 \; \varepsilon_2 \; \varepsilon_3]=\begin{bmatrix}
+令 $\mymathbox{
+Q=[\varepsilon_1 \; \varepsilon_2 \; \varepsilon_3]=\begin{bmatrix}
     -\frac{2}{3} & \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{6}\\
     \frac{2}{3} & \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{6}\\
     -\frac{1}{3} & 0 & \frac{2\sqrt{2}}{3}
-\end{bmatrix}$
-}$, 
+\end{bmatrix}}$, 
+
 $Q^{-1}AQ = \Lambda = 
 \begin{bmatrix}
     10&&\\
@@ -108,12 +106,11 @@ $$
     -1+x-1=5+y-5
 \end{cases}
 \Rightarrow
-\mybox{
-$\begin{cases}
+\mymathbox{
+\begin{cases}
     x = 1\\
     y = -1
-\end{cases}$
-}
+\end{cases}}
 $$
 
 \vspace{12pt}
@@ -129,14 +126,15 @@ $$
 的总体, 用矩估计法估计总体均值、总体方差及参数 $\beta$.
 
 \textbf{Sol}:
-总体均值: $\alpha_1=E(x)$, 用矩估计法估计得到\mybox{ $\hat{\alpha}_1=\bar{x}=1.2$}.\par
-总体方差: $\alpha_2=M_k'(x)$, 用矩估计法得到 \mybox{$\hat{\alpha}_2=S_x=0.488$}.\par
+总体均值: $\alpha_1=E(x)$, 用矩估计法估计得到\mymathbox{\hat{\alpha}_1=\bar{x}=1.2}.\par
+总体方差: $\alpha_2=M_k'(x)$, 用矩估计法得到 \mymathbox{\hat{\alpha}_2=S_x=0.488}.\par
 利用总体均值估计参数: 由于
 
 $$
 \alpha_1=E(x)=\int_{-\infty}^{+\infty}xf(x,\beta)\text{d}x=\int_0^{\beta}\dfrac{x}{\beta}\text{d}x=\dfrac{x^2}{2\beta}\Bigg|_{0}^{\beta}=\dfrac{\beta}{2}
 $$
-则有 $\beta=2\alpha_1$。所以 $\beta$ 矩估计值为 \mybox{$\hat{\beta}_1=2\bar{x}=2.4$}.
+则有 $\beta=2\alpha_1$。
+所以 $\beta$ 矩估计值为 \mymathbox{\hat{\beta}_1=2\bar{x}=2.4}.
 
 \vspace{12pt}
 
@@ -179,12 +177,13 @@ $$
 \end{cases}
 $$
 
-解得 \mybox{$\begin{cases}
-\displaystyle
+解得 \mymathbox{
+\begin{cases}
+    \displaystyle
     \mu=\dfrac{1}{n}\sum_{i=1}^n\ln x_i\\
 \displaystyle
     \sigma^2=\dfrac{1}{n}\sum_{i=1}^n\Big(\ln x_i-\dfrac{1}{n}\sum_{i=1}^n\ln x_i\Big)^2
-\end{cases}$}
+\end{cases}}
 
 \vspace{12pt}
 
@@ -204,7 +203,7 @@ $$
 
 $E[t_i(X_1,X_2,X_3)-E(X)]=\dfrac{1}{3}\sum_{j=1}^3w_{j,i}E[X_j]-E(X)\Big(\sum_{j=1}^3w_{j,i}-1\Big)=0$,
 
-\mybox{从而得证上述式子为 $E(x)$ 的无偏估计量}. 其均方误差
+\mytextbox{从而得证上述式子为 $E(x)$ 的无偏估计量}. 其均方误差
 
 $$
 \begin{aligned}
@@ -218,7 +217,7 @@ $$
 $$
 
 
-均方误差 $r(t_1)=\dfrac{9}{25}S(X)$, $r(t_2)=\dfrac{7}{18}S(X)$, $r(t_3)=\dfrac{94}{196}S(X)$, 因此\mybox{无偏估计量 $t_1$ 方差最小}.
+均方误差 $r(t_1)=\dfrac{9}{25}S(X)$, $r(t_2)=\dfrac{7}{18}S(X)$, $r(t_3)=\dfrac{94}{196}S(X)$, 因此\mytextbox{无偏估计量 $t_1$ 方差最小}.
 
 \vspace{12pt}
 

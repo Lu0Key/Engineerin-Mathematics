@@ -31,14 +31,13 @@ $$
 
 因此得到 
 $$
-\mybox{
-$P=\left[\begin{array}{cccc}
+\mymathbox{
+P=\left[\begin{array}{cccc}
     -2&1&1&0\\
     -1&1&-1&0\\
     2&-1&0&0\\
     -3&0&1&1\\
-\end{array}\right]$
-}
+\end{array}\right]}
 $$
 
 \vspace{12pt}
@@ -77,16 +76,14 @@ $$
 因此将 $A$ 分解为 $A=F\cdot G$, 其中
 
 $$
-\mybox{
-$F=\begin{bmatrix}
+\mymathbox{
+F=\begin{bmatrix}
     1&-1&2\\1&1&-2\\3&-1&-6\\1&3&-6
-\end{bmatrix}$
-},
-\mybox{
-$G=\begin{bmatrix}
+\end{bmatrix}},
+\mymathbox{
+G=\begin{bmatrix}
     1&0&0&1&1\\0&1&0&2&2\\0&0&1&\frac{1}{2}&0
-\end{bmatrix}$
-}
+\end{bmatrix}}
 $$
 
 \vspace{12pt}
@@ -96,7 +93,7 @@ $$
 \textbf{Sol}:
 
 $e_r=\dfrac{e}{x^*}=\dfrac{x^*-x}{x^*}=1\%$,\\
-$e_r'=\dfrac{e'}{(x^*)^n}=\dfrac{(x^*)^n-x^n}{(x^*)^n}=1-\left(\dfrac{x}{x^*}\right)^n=\mybox{$1-0.99^n$}$.
+$e_r'=\dfrac{e'}{(x^*)^n}=\dfrac{(x^*)^n-x^n}{(x^*)^n}=1-\left(\dfrac{x}{x^*}\right)^n=\mymathbox{1-0.99^n}$.
 
 \vspace{12pt}
 
@@ -104,7 +101,11 @@ $e_r'=\dfrac{e'}{(x^*)^n}=\dfrac{(x^*)^n-x^n}{(x^*)^n}=1-\left(\dfrac{x}{x^*}\ri
 
 \textbf{Sol}:
 
-易知 $Y_{10}\sim N\bigg(20,\dfrac{3}{10}\bigg)$, $Y_{15}\sim N\bigg(20,\dfrac{1}{5}\bigg)$, 则 $Y_{10}-Y_{15}\sim N\bigg(0,\dfrac{1}{2}\bigg)$, $Pr(|Y_{10}-Y_{15}|<0.3)=2\cdot \Phi(0.3\sqrt{2})-1=2\cdot\Phi(0.4243)-1$, 查表可得 $\mybox{$Pr(|Y_{10}-Y_{15}|<0.3)=0.3286$}$.
+易知 $Y_{10}\sim N\bigg(20,\dfrac{3}{10}\bigg)$, 
+$Y_{15}\sim N\bigg(20,\dfrac{1}{5}\bigg)$, 
+则 $Y_{10}-Y_{15}\sim N\bigg(0,\dfrac{1}{2}\bigg)$, 
+$Pr(|Y_{10}-Y_{15}|<0.3)=2\cdot \Phi(0.3\sqrt{2})-1=2\cdot\Phi(0.4243)-1$, 
+查表可得 $\mymathbox{Pr(|Y_{10}-Y_{15}|<0.3)=0.3286}$.
 
 \vspace{12pt}
 
@@ -117,10 +118,10 @@ $e_r'=\dfrac{e'}{(x^*)^n}=\dfrac{(x^*)^n-x^n}{(x^*)^n}=1-\left(\dfrac{x}{x^*}\ri
 \textbf{Sol}:
 
 (1) 已知 $\dfrac{X_1+X_2}{\sqrt{2}}\sim N(0,1)$, $\dfrac{X_3+X_4+X_5}{\sqrt{3}}\sim N(0,1)$, 因此有 $\Bigg(\dfrac{X_1+X_2}{\sqrt{2}}\Bigg)^2\sim \chi^2(1)$, $\Bigg(\dfrac{X_3+X_4+X_5}{\sqrt{3}}\Bigg)^2\sim\chi^2(1)$, $\Bigg(\dfrac{X_1+X_2}{\sqrt{2}}\Bigg)^2+\Bigg(\dfrac{X_3+X_4+X_5}{\sqrt{3}}\Bigg)^2\sim\chi^2(2)$. \\
-因此得 \mybox{$c_1=\dfrac{1}{2},\;d_1=\dfrac{1}{3}$}. 自由度为 2.
+因此得 \mymathbox{c_1=\dfrac{1}{2},\;d_1=\dfrac{1}{3}}. 自由度为 2.
 
 (2) 由上可知 $X_1^2+X_2^2\sim \chi^2(2)$, $\Bigg(\dfrac{X_3+X_4+X_5}{\sqrt{3}}\Bigg)^2\sim \chi^2(1)$, 因此有 $\dfrac{\frac{X_1^2+X_2^2}{2}}{\frac{(x_3+X_4+X_5)^2}{3}}\sim F(2,1)$,\\
-因此得 \mybox{$c_2=3,\;d_2=2$}, 第一自由度为2, 第二自由度为1.
+因此得 \mymathbox{c_2=3,\;d_2=2}, 第一自由度为2, 第二自由度为1.
 
 \vspace{12pt}
 
@@ -155,7 +156,7 @@ $$
 \end{aligned}
 $$
 
-i) \mybox{当 $\lambda=1$ 时, 方程组有无穷多解.}  
+i) \mytextbox{当 $\lambda=1$ 时, 方程组有无穷多解.}  
 
 $$
 B\Rightarrow\begin{bmatrix}
@@ -166,13 +167,12 @@ $$
 此时一般解为
 
 $$
-\mybox{
-$\begin{cases}
+\mymathbox{
+\begin{cases}
     x_1=k_1\\
     x_2=k_2\\
     x_3=\frac{k_1+2k_2-1}{2}\\
-\end{cases}$
-}
+\end{cases}}
 $$
 
 ii) 当 $\lambda\not =0$ 时, 有
@@ -190,8 +190,8 @@ $B\Rightarrow
     2&-5&-4&2\\0&0&0&1\\0&1&1&1\\
 \end{bmatrix}$,
 $r(A)<r(B)$, 因此, \\
-\mybox{当 $\lambda=10$ 时 此时方程组无解}.
+\mytextbox{当 $\lambda=10$ 时 此时方程组无解}.
 
-iii) 当 $\lambda\not=1$ 且 $\lambda\not=10$ 时, $r(A)=r(B)$, 因此, \mybox{当 $\lambda\not=1$ 且 $\lambda\not=10$ 时, 方程有唯一解}.
+iii) 当 $\lambda\not=1$ 且 $\lambda\not=10$ 时, $r(A)=r(B)$, 因此, \mytextbox{当 $\lambda\not=1$ 且 $\lambda\not=10$ 时, 方程有唯一解}.
 
 \vspace{12pt}

@@ -8,13 +8,16 @@
 \textbf{Sol}:  因为 $A^HA=\begin{bmatrix}
     18&\\&18
 \end{bmatrix}=AA^H$, 
-\mybox{所以 $A$ 是正规矩阵}.
+\mytextbox{所以 $A$ 是正规矩阵}.
 
 根据 $\text{Schur}$ 定理, 存在酉矩阵 $U$ 使 $U^{-1}AU$ 为对角矩阵。 由 $|A-\lambda I|=0$ 算出特征值 $\lambda_1=3\sqrt{2}i,\;\lambda_2=-3\sqrt{2}i$. 对应特征值 $3\sqrt{2}i$ 的特征向量 $\varepsilon_1=\dfrac{1}{\sqrt{3}}\begin{bmatrix}
     i\\\sqrt{2}
-\end{bmatrix}$, 以 $\varepsilon_1$ 为第一列的一个酉矩阵可取为 \mybox{$U=\dfrac{1}{\sqrt{3}}\begin{bmatrix}
+\end{bmatrix}$, 
+以 $\varepsilon_1$ 为第一列的一个酉矩阵可取为 
+\mymathbox{
+U=\dfrac{1}{\sqrt{3}}\begin{bmatrix}
     i&-\sqrt{2}\\\sqrt{2}&-i\\
-\end{bmatrix}$}
+\end{bmatrix}}
 
 可以验证 $U^{-1}AU=\begin{bmatrix}
     3\sqrt{2}i&\\&-3\sqrt{2}i
@@ -31,7 +34,7 @@
 
 \textbf{Sol}: 由 $|A-\lambda I|=0$ 算出特征值 $\lambda_1=1+\sqrt{5},\;\lambda_2=1-\sqrt{5}$. 
 
-于是 $S_p(A)=\{1-\sqrt{5},\;1+\sqrt{5}\}$, 所以 \mybox{$\rho(A)=1+\sqrt{5}$}.
+于是 $S_p(A)=\{1-\sqrt{5},\;1+\sqrt{5}\}$, 所以 \mymathbox{\rho(A)=1+\sqrt{5}}.
 
 
 \vspace{12pt}
@@ -62,14 +65,14 @@ $$
 $$
 \begin{aligned}
     &\begin{bmatrix}
-        \mybox{4}&-1.24&0.3&-11.04\\
+        \mymathbox{4}&-1.24&0.3&-11.04\\
         2&4.5&0.36&0.02\\
         0.5&1.1&3.1&6\\
     \end{bmatrix}\\
     \Longrightarrow&
     \begin{bmatrix}
         4&-1.24&0.3&-11.04\\
-        0&\mybox{5.12}&0.21&5.54\\
+        0&\mymathbox{5.12}&0.21&5.54\\
         0&1.26&3.062&7.38\\
     \end{bmatrix}\\
     \Longrightarrow&
@@ -84,13 +87,12 @@ $$
 回代求解得到
 
 $$
-\mybox{
-$\begin{aligned}
+\mymathbox{
+\begin{aligned}
     &x_3=\dfrac{6.017}{3.011}=2\\
     &x_2=\dfrac{5.54-0.21x_3}{5.12}=1\\
     &x_1=\dfrac{-11.04-0.3x_3+1.24x_2}{4}=-2.6
-\end{aligned}$
-}
+\end{aligned}}
 $$
 
 \vspace{12pt}
