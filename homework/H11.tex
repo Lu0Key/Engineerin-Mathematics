@@ -1,0 +1,139 @@
+
+
+
+41. 已知 $\mathbb{R}^3$ 的两个基
+
+$$
+\mathscr{R}_1=\left\{
+    \begin{bmatrix}
+        1\\-1\\0\\
+    \end{bmatrix},
+    \begin{bmatrix}
+        0\\1\\-1\\
+    \end{bmatrix},
+    \begin{bmatrix}
+        0\\0\\1\\
+    \end{bmatrix}
+\right\},\quad
+\mathscr{R}_2=\left\{
+    \begin{bmatrix}
+        1\\-1\\1\\
+    \end{bmatrix},
+    \begin{bmatrix}
+        0\\1\\1\\
+    \end{bmatrix},
+    \begin{bmatrix}
+        1\\0\\1\\
+    \end{bmatrix}
+\right\}.
+$$
+\begin{enumerate}[(1)]
+    \item 求 $\mathscr{R}_1$ 到 $\mathscr{R}_2$ 的基变换矩阵 $\textbf{P}$;
+    \item 求在 $\mathscr{R}_1$、$\mathscr{R}_2$ 下有相同坐标的所有向量.
+\end{enumerate}
+
+
+\textbf{Sol}:  
+
+\begin{enumerate}[(1)]
+    \item \mybox{$\mathscr{R}_2=\mathscr{R}_1P,\Longrightarrow \textbf{P}= \mathscr{R}_1^{-1}\mathscr{R}_2=\begin{bmatrix}
+        1&0&1\\0&1&1\\1&2&2\\
+    \end{bmatrix}$}
+    
+    \item 即求 $\mathscr{R}_1x=\mathscr{R}_2x,\Longrightarrow x= \mathscr{R}_1^{-1}\mathscr{R}_2x$, $\textbf{x}$ 的非零向量解即求矩阵 $P$ 关于特征值 1的特征向量, 若不存在特征值1则 $\textbf{x}$ 只有零向量解.  
+    $$
+    \begin{aligned}
+        &|\lambda I-P=|=\begin{bmatrix}
+        \lambda-1&0&-1\\
+        0&\lambda-1&-1\\
+        -1&-2&\lambda-2\\
+        \end{bmatrix}\\
+        =&(\lambda-1)^2
+        (\lambda-2)-3(\lambda-1)\\
+        =&(\lambda-1)(\lambda^2-3\lambda-1)
+    \end{aligned}
+    $$
+    得其中一个特征值为1, 
+    $$
+    (P-I)x=\begin{bmatrix}
+        0&0&1\\
+        0&0&1\\
+        1&2&1\\
+    \end{bmatrix}\\
+    \longrightarrow\begin{bmatrix}
+        0&0&0\\0&0&1\\1&2&0
+    \end{bmatrix}
+    $$
+    得到一个基础解系 $p=[2,-1,0]^{\text{T}}$,因此在 $\mathscr{R}_1,\;\mathscr{R}_2$ 下有相同坐标的所有向量为 \mybox{$[2,-1,0]^{\text{T}},\;k\in\mathbb{R}$}.
+
+\end{enumerate}
+
+
+
+\vspace{12pt}
+
+42. 已知 $\mathbb{R}^3$ 的线性变换 $\mathscr{F}$ 在基 $\mathscr{R}_1=\left\{
+    \begin{bmatrix}
+        -1\\1\\1\\
+    \end{bmatrix},
+    \begin{bmatrix}
+        1\\0\\-1\\
+    \end{bmatrix},
+    \begin{bmatrix}
+        0\\1\\1\\
+    \end{bmatrix}
+\right\}$ 下的矩阵是
+
+$$
+\textbf{A}=\begin{bmatrix}
+    1&0&1\\
+    1&1&0\\
+    -1&2&1\\
+\end{bmatrix},
+$$
+
+\vspace{30pt}
+
+求 $\mathscr{F}$ 在基 $\mathscr{R}_2=\left\{
+    \begin{bmatrix}
+        1\\-1\\1\\
+    \end{bmatrix},
+    \begin{bmatrix}
+        1\\0\\1\\
+    \end{bmatrix},
+    \begin{bmatrix}
+        1\\1\\2\\
+    \end{bmatrix}
+\right\}
+$ 下的矩阵 $\textbf{B}$.
+
+\textbf{Sol}:  设 $\mathscr{R}_1$ 到 $\mathscr{R}_2$ 得基变换矩阵为 $\textbf{P}$, 则有 $\mathscr{R}_2=\mathscr{R}_1\textbf{P}$,
+
+解得 $\textbf{P}=\mathscr{R}_1^{-1}\mathscr{R}_2=\begin{bmatrix}
+    -3&-2&-2\\
+    -2&-1&-1\\
+    2&2&3\\
+\end{bmatrix}$
+
+可得 $\textbf{P}^{-1}=\begin{bmatrix}
+    1&-2&0\\
+    -4&5&-1\\
+    2&-2&1\\
+\end{bmatrix}$
+
+$$
+\mybox{
+$\textbf{B}=\textbf{P}^{-1}\textbf{AP}=\begin{bmatrix}
+    9&6&7\\
+    -22&-17&-22\\
+    9&8&11\\
+\end{bmatrix}$
+}
+$$
+
+
+\vspace{12pt}
+
+
+
+

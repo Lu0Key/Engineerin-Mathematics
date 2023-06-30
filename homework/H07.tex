@@ -1,0 +1,196 @@
+
+
+27. 求可逆矩阵 $P$ 使 $P^{-1}AP$ 为 $Jordan$ 矩阵, 其中
+
+$$
+A=
+\begin{bmatrix}
+    5&3&0&1\\
+    -1&1&0&0\\
+    1&3&2&1\\
+    0&0&0&2\\
+\end{bmatrix}.
+$$
+
+\textbf{Sol}: $|A-\lambda I|=\begin{vmatrix}
+5-\lambda & 3 & 0 & 1\\
+-1 & 1-\lambda & 0 & 0\\
+1&3&2-\lambda&0\\
+0&0&0&2-\lambda
+\end{vmatrix}=(\lambda-2)^3(\lambda-4)$
+
+可知矩阵 $A$ 的特征值为 $\lambda_1=\lambda_2=\lambda_3=2,\lambda_4=4$.
+
+当 $\lambda=4$ 时, $A-4I=\begin{bmatrix}
+    1&3&0&1\\
+    -1&-3&0&0\\
+    1&3&-2&0\\
+    0&0&0&-2\\
+\end{bmatrix}$, 得到其中一个基础解系 $x_1=[-3\;1\;0\;0]^T$, 它是 $A$ 属于特征值 $4$ 的特征向量;
+
+当 $\lambda=2$ 时, 考虑线性方程组 $(A-2I)x=y$, 即 $\begin{bmatrix}
+    3&3&0&1\\
+    -1&-1&0&0\\
+    1&3&0&1\\
+    0&0&0&0
+\end{bmatrix}\begin{bmatrix}
+    x_1\\x_2\\x_3\\x_4
+\end{bmatrix}=\begin{bmatrix}
+    y_1\\y_2\\y_3\\y_4
+\end{bmatrix}$. 
+由于 $r=(A-2I)=3$, 所以特征值 $2$ 的几何重数时 $4-3=1$. 对增广矩阵实施初等行变换, 解得 $x_2=[0\;0\;1\;0]^T$. 将 $y=x_2$ 代入 $(A-2I)x=y$ 解得任意一个解 $x_3=[-\frac{1}{2}\;\frac{1}{2}\;1\;0]^T$. 令 $y=x_3$ 任取一个解 $x_4=[-\frac{3}{4}\;\frac{1}{4}\;0\;1]^T$, 此时 $x_1,x_2,x_3,x_4$ 线性无关.
+
+令 $P=[x_1\;x_2\;x_3\;x_4]
+=\mybox{
+$\begin{bmatrix}
+    -3&0&-\frac{1}{2}&-\frac{3}{4}\\
+    1&0&\frac{1}{2}&\frac{1}{4}\\
+    0&1&1&0\\
+    0&0&0&1\\
+\end{bmatrix}$
+}$, 
+
+则有 $AP=P\begin{bmatrix}
+    4&&&\\
+    &2&1&\\
+    &&2&1\\
+    &&&2\\
+\end{bmatrix}$, 由于 $|P|\not=0$, $P^{-1}=\begin{bmatrix}
+    -\frac{1}{2}&-\frac{1}{2}&0&-\frac{1}{4}\\
+    -1&-3&1&0\\
+    1&3&0&0\\
+    0&0&0&1\\
+\end{bmatrix}$.
+
+
+\vspace{12pt}
+
+28. 求 $A^k$($k$ 是正整数), 其中
+
+$$
+A=
+\begin{bmatrix}
+    3&2&-1\\
+    2&2&-1\\
+    2&2&0\\
+\end{bmatrix}.
+$$
+
+\textbf{Sol}: $|A-\lambda I|=\begin{vmatrix}
+    3-\lambda&1&-1\\
+    2&2-\lambda&-1\\
+    2&2&-\lambda
+\end{vmatrix}=-(\lambda-2)^2(\lambda-1)$ 可知矩阵 $A$ 的特征值为 $\lambda_1=\lambda_2=2,\lambda_3=1$.
+
+当 $\lambda=1$ 时, 由于 $(A-2I)x_1=0$, 得到其中一个基础解系 $x_1=[1\;0\;2]^T$, 它是 $A$ 属于特征值 1 的特征向量.
+
+当 $\lambda=2$ 时, 由于 $r(A-2I)=2$, 所以特征值 2 的几何重数时 3-2=1. $(A-2I)x_2=0$, 得到其中一个基础解系 $x_2=[1\;1\;2]^T$, 它是 $A$ 属于特征值 2 的特征向量; 将 $y=x_2$ 代入 $(A-2I)x=y$ 解得任意一个解 $x_2=[\frac{1}{2}\;\frac{1}{2}\;0]^T$. 
+
+$P=[x_1\;x_2\;x_3]=\begin{bmatrix}
+    1&1&\frac{1}{2}\\
+    0&1&\frac{1}{2}\\
+    2&2&0\\
+\end{bmatrix}$, $P^{-1}=\begin{bmatrix}
+    1&-1&0\\
+    -1&1&\frac{1}{2}\\
+    2&0&-1\\
+\end{bmatrix}$.
+
+由于 $A=P\begin{bmatrix}
+    1&0&0\\
+    0&2&1\\
+    0&0&2\\
+\end{bmatrix}P^{-1}$,
+
+因此 $A^k=P\begin{bmatrix}
+    1&0&0\\
+    0&2&1\\
+    0&0&2\\
+\end{bmatrix}^kP^{-1}
+=\mybox{
+$\begin{bmatrix}
+    1+k2^k&2^k-1&2^k-1&-k2^k-1\\
+    k2^k&2^k&-k2^k-1\\
+    2-(k-1)2^{2^k-1}&2^{k+1}-2&(1-k)2^k
+\end{bmatrix}$
+}$.
+
+
+\vspace{12pt}
+
+29. 求 $g(A)=a^8-9A^6+A^4-3A^3+4A^2+I$, 其中
+
+$$
+A=
+\begin{bmatrix}
+    2&-1&-2\\
+    -1&2&2\\
+    0&0&1\\
+\end{bmatrix}.
+$$
+
+\textbf{Sol}: 方阵 $A$ 的特征多项式为, 为 $f(\lambda)=|A-\lambda I|=\begin{vmatrix}
+    2-\lambda&-1&-2\\
+    -1&2-\lambda&2\\
+    0&0&1-\lambda\\
+\end{vmatrix}=-(\lambda-1)^2(\lambda-3)$
+
+且 $g(A)$ 对应的特征多项式 $g(\lambda)=\lambda^8-9\lambda^6+\lambda^4-3\lambda^3+4\lambda^2+1$.  $g(\lambda)$ 除以 $f(\lambda)$ 得到表达式 $g(\lambda)=q(\lambda)f(\lambda)+r(\lambda)$, 其中 $q(\lambda)$ 和 $r(\lambda)$ 都是多项式, 且余式 $r(\lambda)$ 的次数至少比 $f(\lambda)$ 的次数低 1 次. 即 $r(\lambda)=a_0\lambda^2+a_1\lambda+a_2$. 代入得到 $g(\lambda)=q(\lambda)f(\lambda)+a_0\lambda^2+a_1\lambda+a_2$.
+
+将特征值 $1,\;3$ 分别代入, 得 $a_0+a_1+a_2=g(1)=-5$, $9a_0+3a_1+a_2=g(3)=37$. 又 $g'(\lambda)=q'(\lambda)f(\lambda)+q(\lambda)f'(\lambda)+2a_0\lambda+a_1$, 有 $g'(1)=2a_0+a_1=-43$, 解得
+
+$$
+\begin{cases}
+a_0=32\\
+a_1=-107\\
+a_2=70\\
+\end{cases}
+$$
+
+因为 $f(\lambda)$ 是 $A$ 的零化多项式, 得
+
+\mybox{
+$g(A)=r(A)=32A^2-107A+70I=\begin{bmatrix}
+    16&-21&-42\\
+    -21&16&42\\
+    0&0&-5\\
+\end{bmatrix}$
+}
+
+\vspace{12pt}
+
+30. 求下列方阵得最小多项式:
+
+$$
+A=
+\begin{bmatrix}
+    3&1&1&1\\
+    -4&-1&-1&1\\
+    &&2&1\\
+    &&-1&0\\
+\end{bmatrix}.
+$$
+
+\textbf{Sol}: $\text{det}(A-\lambda I)=(\lambda-1)^4$, 故 $A$ 得最小多项式的形式是 $f(\lambda)=(\lambda-1)^n,n\in[1,4]$,
+
+$(A-I)=\begin{bmatrix}
+    4&1&1&1\\
+    -4&-2&-1&1\\
+    0&0&1&1\\
+    0&0&-1&-1\\
+\end{bmatrix}\not=O$, $(A-I)^2=\begin{bmatrix}
+    0&0&1&3\\
+    0&0&-4&-8\\
+    0&0&0&0\\
+    0&0&0&0\\
+\end{bmatrix}\not=O$, $(A-I)^3=\begin{bmatrix}
+    0&0&-2&-2\\
+    0&0&4&4\\
+    0&0&0&0\\
+    0&0&0&0\\
+\end{bmatrix}\not=O$, $(A-I)^4=O$, 因此 $A$ 的最小多项式是 \mybox{$f(\lambda)=(\lambda-1)^4$}.
+
+
+\vspace{12pt}
+
+

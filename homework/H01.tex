@@ -1,0 +1,152 @@
+
+1. 已知向量 $\alpha_1=[3,1,5,2]^\text{T},\;\alpha_2=[10,5,1,10]^\text{T},\;\alpha_3=[1,-1,1,4]^\text{T}$. 若有方程 $3(\alpha_1-\beta)+2(\alpha_2-\beta)=5(\alpha_3+\beta)$, 求 $\beta$.
+
+\textbf{Sol}: 
+
+由题 $3(\alpha_1-\beta)+2(2\alpha_2-\beta)=5(\alpha_3+\beta)$ 
+可得 $10\beta=3\alpha_1+2\alpha_2-5\alpha_3$, 
+因此 $\beta=\frac{3}{10}\alpha_1+\frac{2}{10}\alpha_2-\frac{5}{10}\alpha_3$, 
+代入 $\alpha_1,\;\alpha_2,\;\alpha_3$ 
+
+可得 \mybox{$\beta=[\frac{12}{5},\frac{9}{5},\frac{6}{5},\frac{3}{5}]^\text{T}$}.
+
+
+2. 证明：$\Big\{\alpha_1=[1,1,0]^\text{T},\;\alpha_2=[0,0,2]^\text{T},\;\alpha_3=[0,1,2]^\text{T}\Big\}$ 是 $\mathbb{R}^3$ 的一个基; 并求 $\beta=[5,7,-2]^\text{T}$ 在这个基下的坐标.
+
+\textbf{Sol}: 设 $k_1\alpha_1+k_2\alpha_2+k_3\alpha_3=0$, 则有：
+
+$$
+\begin{cases}
+k_1=0\\
+k_1+k_3=0\\
+2k_2+2k_3=0\\
+\end{cases}
+\Rightarrow 
+\begin{cases}
+    k_1=0\\
+    k_2=0\\
+    k_3=0\\
+\end{cases}
+$$
+
+因此 $\alpha_1,\;\alpha_2,\;\alpha_3$ 线性无关，因此是 $\mathbb{R}^3$ 的一个基. 设 $\beta=n_1\alpha_1+n_2\alpha_2+n_3\alpha_3$。因此有
+
+$$
+\begin{cases}
+    n_1=5\\
+    n_1+n_3=7\\
+    2n_2+2n_3=-2\\
+\end{cases}
+\Rightarrow
+\begin{cases}
+    n_1=5\\
+    n_2=-3\\
+    n_3=2\\
+\end{cases}
+$$
+
+
+因此 $\beta$ 在这个基下的坐标为 \mybox{$[5,-3,2]^\text{T}$}.
+
+3. 已知 $\Big\{\alpha_1=[1,1,0,0]^\text{T},\;\alpha_2=[0,0,1,1]^\text{T},\;\alpha_3=[1,0,0,-1]^\text{T},\;\alpha_4=[0,1,1,0]^\text{T}\Big\}$ 是 $\mathbb{R}^4$ 的一个基; 用 $\text{Schmidt}$ 正交化方法求 $\mathbb{R}^4$ 的标准正交基。
+
+\textbf{Sol}: \text{Schmidt} 正交化：  
+令 $\beta=\alpha_1=[1,1,0,0]^\text{T}$, $\beta_2=\alpha_2-\dfrac{(\alpha_2,\beta_1)}{(\beta_1,\beta_1)}\beta_1=[0,0,1,1]^{\text{T}}$, $\beta_3=\alpha_3-\dfrac{(\alpha_3,\beta_1)}{(\beta_1,\beta_1)}\beta_1-\dfrac{(\alpha_3,\beta_2)}{(\beta_2,\beta_2)}\beta_2=[\frac{1}{2},-\frac{1}{2},\frac{1}{2},-\frac{1}{2}]^\text{T}$.\par
+
+
+再将向量单位化得 \par
+$\eta_1=\frac{\beta_1}{|\beta_1|}=[\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2},0,0]^\text{T},\;\\\\
+\eta_2=\frac{\beta_2}{|\beta_2|}=[0,0,\frac{\sqrt{2}}{2},\frac{\sqrt{2}}{2}]^\text{T},\;\\\\
+\eta_3=\frac{\beta_3}{|\beta_3|}=[\frac{1}{2},-\frac{1}{2},\frac{1}{2},-\frac{1}{2}]^\text{T},\;\\\\
+\eta_4=\frac{\beta_4}{|\beta_4|}=[-\frac{1}{2},\frac{1}{2},\frac{1}{2},-\frac{1}{2}]^\text{T}$.\par
+
+至此我们得到了所求的 $\mathbb{R}^4$ 的标准正交基.
+
+4. 已知 $AP=PB$, 求 $A$ 和 $A^8$。其中:
+$$
+B=\begin{bmatrix}
+1&0&0\\
+0&1&0\\
+0&0&-1
+\end{bmatrix},\;
+P=\begin{bmatrix}
+    1&0&1\\
+    -1&1&1\\
+    0&-1&1\\
+\end{bmatrix}.
+$$
+
+\textbf{Sol}: 因为有 $|P|=\begin{vmatrix}
+    1&0&1\\
+    -1&1&1\\
+    0&-1&1\\
+\end{vmatrix}=3\not=0$, 因此 $P$ 可逆，又 $AP=PB$, 因此存在 $P^{-1}$, 使得 $A=PBP^{-1}$ 成立。
+
+$$
+\begin{aligned}
+P^{-1}=&\dfrac{1}{|P|}P^{*}=\dfrac{1}{3}
+\begin{pmatrix}
+2&-1&-1\\
+1&1&-2\\
+1&1&1\\
+\end{pmatrix}\\
+=&\begin{pmatrix}
+\frac{2}{3}&-\frac{1}{3}&-\frac{1}{3}\\
+\frac{1}{3}&\frac{1}{3}&-\frac{2}{3}\\
+\frac{1}{3}&\frac{1}{3}&\frac{1}{3}\\
+\end{pmatrix}
+\end{aligned}
+$$
+
+因此有 $\mybox{
+$A=PBP^{-1}=\begin{pmatrix}
+    \frac{1}{3}&-\frac{2}{3}&-\frac{2}{3}\\
+    -\frac{2}{3}&\frac{1}{3}&-\frac{2}{3}\\
+    -\frac{2}{3}&-\frac{2}{3}&\frac{1}{3}\\
+\end{pmatrix}
+$}$
+
+\par
+
+$A^8=(PBP^{-1})\cdots(PBP^{-1})=PBP^{-1}PBP^{-1}\cdots PBP^{-1}=PB^8P^{-1}$, 又 $B^8=\begin{pmatrix}
+    1&0&0\\
+    0&1&0\\
+    0&0&1\\
+\end{pmatrix}$, 因此\\\par
+
+$$
+\mybox{
+$\begin{aligned}
+    A^8=&PB^8P^{-1}=PP^{-1}\\
+    =&E=\begin{pmatrix}
+        1&0&0\\
+        0&1&0\\
+        0&0&1\\
+    \end{pmatrix}
+\end{aligned}$
+}
+$$
+
+
+5. 设 $A=\begin{bmatrix}
+    1&2&0&0\\
+    2&6&0&0\\
+    0&0&3&5\\
+    0&0&1&2
+\end{bmatrix}$, 求 $|A|$ 和 $|A^{-1}|$.
+
+\textbf{Sol}: 
+
+$\mybox{
+    $|A|=\begin{vmatrix}
+    1&2\\
+    2&6\\
+\end{vmatrix}\cdot\begin{vmatrix}
+    3&5\\
+    1&2\\
+\end{vmatrix}=2$}\not=0$, 
+因此 $A$ 可逆，
+有 $AA^{-1}=E\Rightarrow|A||A^{-1}|=1\Rightarrow \mybox{ $|A^{-1}|=\dfrac{1}{2}$}$.
+
+
+

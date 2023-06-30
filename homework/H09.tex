@@ -1,0 +1,98 @@
+
+34.验证 $A=\begin{bmatrix}
+    -\sqrt{2}i&-4\\
+    4&\sqrt{2}i
+\end{bmatrix}$ 是正规矩阵, 并求酉矩阵 $U$ 使得 $U^{-1}AU$ 为对角矩阵.
+
+
+\textbf{Sol}:  因为 $A^HA=\begin{bmatrix}
+    18&\\&18
+\end{bmatrix}=AA^H$, 
+\mybox{所以 $A$ 是正规矩阵}.
+
+根据 $\text{Schur}$ 定理，存在酉矩阵 $U$ 使 $U^{-1}AU$ 为对角矩阵。 由 $|A-\lambda I|=0$ 算出特征值 $\lambda_1=3\sqrt{2}i,\;\lambda_2=-3\sqrt{2}i$. 对应特征值 $3\sqrt{2}i$ 的特征向量 $\varepsilon_1=\dfrac{1}{\sqrt{3}}\begin{bmatrix}
+    i\\\sqrt{2}
+\end{bmatrix}$, 以 $\varepsilon_1$ 为第一列的一个酉矩阵可取为 \mybox{$U=\dfrac{1}{\sqrt{3}}\begin{bmatrix}
+    i&-\sqrt{2}\\\sqrt{2}&-i\\
+\end{bmatrix}$}
+
+可以验证 $U^{-1}AU=\begin{bmatrix}
+    3\sqrt{2}i&\\&-3\sqrt{2}i
+\end{bmatrix}$.
+
+
+\vspace{12pt}
+
+35.求 $A=\begin{bmatrix}
+    1+i&3\\
+    2&1-i
+\end{bmatrix}$ 的谱半径 $\rho(A)$.
+
+
+\textbf{Sol}: 由 $|A-\lambda I|=0$ 算出特征值 $\lambda_1=1+\sqrt{5},\;\lambda_2=1-\sqrt{5}$. 
+
+于是 $S_p(A)=\{1-\sqrt{5},\;1+\sqrt{5}\}$, 所以 \mybox{$\rho(A)=1+\sqrt{5}$}.
+
+
+\vspace{12pt}
+
+36.用 $\text{Gauss}$ 消去法和列主元消去法求解
+
+$$
+\begin{cases}
+    4x_1-1.24x_2+0.3x_3=-11.04,\\
+    2x_1+4.5x_2+0.36x_3=0.02,\\
+    0.5x_1+1.1x_2+3.1x_3=6.\\
+\end{cases}
+$$
+
+
+\textbf{Sol}: 根据题意，方程组的增广矩阵为
+
+$$
+\begin{bmatrix}
+    4&-1.24&0.3&-11.04\\
+    2&4.5&0.36&0.02\\
+    0.5&1.1&3.1&6\\
+\end{bmatrix}
+$$
+
+通过高斯消去法得
+
+$$
+\begin{aligned}
+    &\begin{bmatrix}
+        \mybox{4}&-1.24&0.3&-11.04\\
+        2&4.5&0.36&0.02\\
+        0.5&1.1&3.1&6\\
+    \end{bmatrix}\\
+    \Longrightarrow&
+    \begin{bmatrix}
+        4&-1.24&0.3&-11.04\\
+        0&\mybox{5.12}&0.21&5.54\\
+        0&1.26&3.062&7.38\\
+    \end{bmatrix}\\
+    \Longrightarrow&
+    \begin{bmatrix}
+        4&-1.24&0.3&-11.04\\
+        0&5.12&0.21&5.54\\
+        0&0&3.001&6.017
+    \end{bmatrix}
+\end{aligned}
+$$
+
+回代求解得到
+
+$$
+\mybox{
+$\begin{aligned}
+    &x_3=\dfrac{6.017}{3.011}=2\\
+    &x_2=\dfrac{5.54-0.21x_3}{5.12}=1\\
+    &x_1=\dfrac{-11.04-0.3x_3+1.24x_2}{4}=-2.6
+\end{aligned}$
+}
+$$
+
+\vspace{12pt}
+
+

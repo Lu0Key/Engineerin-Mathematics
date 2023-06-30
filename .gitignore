@@ -1,0 +1,12 @@
+.git
+
+*.aux
+*.log
+*.synctex.gz
+*.out
+*.toc
+*.synctex(busy)
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk

@@ -1,0 +1,181 @@
+
+
+45. 今有 $10$ 组观测数据如下
+
+\begin{center}
+    \begin{tabular}{c|cccccccccc}
+        \hline
+        $x_i$ & $0.5$ & $-0.8$ & $0.9$ & $-2.8$ & $6.5$ & $2.3$ & $1.6$ & $5.1$ & $-1.9$ & $-1.5$\\
+        \hline
+        $y_i$ & $-0.3$ & $-1.2$ & $1.1$ & $-3.5$ & $4.6$ & $1.8$ & $0.5$ & $2.8$ & $-2.8$ & $0.5$\\
+        \hline
+    \end{tabular}
+\end{center}
+
+应用正态线性模型 $Y_i=\beta_0+\beta_1x_i+\varepsilon_i,\;\varepsilon_i\sim N(0,\sigma^2),\;i=1,2,\cdots,10$ 且 $\varepsilon_1,\varepsilon_2,\cdots,\varepsilon_{10}$ 相互独立, 
+\begin{enumerate}[(1)]
+    \item 求 $\beta_0,\;\beta_1$ 的最小二乘估计;
+    \item 求 $\beta_1$ 的置信水平围殴 $0.95$ 的区间估计;
+    \item 在显著水平 $\alpha=0.01$ 下, 假设检验 $H_0:\beta_1=0$;
+    \item 计算残差方差 $\hat{\sigma}^2_e$;
+    \item 求 $x=1.2$ 时, $Y$ 的双侧 $95\%$ 的预测区间.
+\end{enumerate}
+
+\textbf{Sol}:  
+
+\begin{enumerate}[(1)]
+    \item 易知 $\bar{x}=0.99,\;\bar{y}=0.35$, $\beta_1=\dfrac{\sum x_iy_i-n\bar{x}\bar{y}}{\sum x_i^2-n\bar{x}^2}$, 因此 $\beta_1\approx 0.7566$, $\beta_0=\bar{y}-\beta_1\bar{x}$, 因此$\beta_0\approx -0.3991$.
+    
+    \item 由题意可知 $\alpha=0.05$, 所求区间为: $\beta_1\pm t_{1-\frac{\alpha}{2}}(n-k-1)\hat{\sigma}_e\sqrt{(L^{-1})_{11}}$, 其中, $e=y-X\hat{\beta}$, $Q_e=e^{\text{T}}e=7.5652$, $n-k-1=10-1-1=8$, 则 $\hat{\sigma}_{e}=\sqrt{\dfrac{Q_e}{n-k-1}}=0.9724$,
+    $$
+    L^{-1}=(X^{\text{T}}X)^{-1}=\begin{bmatrix}
+        10&9\\
+        9.9&91.51\\
+    \end{bmatrix}^{-1}=\begin{bmatrix}
+        0.1120&-0.0121\\
+        -0.0121&0.0122\\
+    \end{bmatrix}
+    $$, $\hat{\beta}_1\pm t_{1-\frac{\alpha}{2}}(n-k-1)\hat{\sigma}_e\sqrt{(L^{-1})_{11}}=0.7566\pm t_{0.975}(8)\cdot 0.9724\cdot 0.1120=0.7566\pm0.2511$,
+    因此得到区间为: $[0.5055,\;1.0077]$.
+    \item 假设检验 $\text{H}_0:\beta_1=0$.
+    
+    % \vspace{80pt}
+    \begin{center}
+    \begin{tabular}{c|c|c|cc}
+        \hline
+        来源&平方和& 自由度 & \multicolumn{1}{c|}{均方和}   & F 值\\ \hline
+        回归系数 & 46.78  & 1   & \multicolumn{1}{c|}{46.78}  & \multirow{2}{*}{49.47} \\
+        残差   & 7.5652 & 8  & \multicolumn{1}{c|}{0.9457} &\\ \hline
+        总和   & 54.35  & 9  &&\\ \hline
+    \end{tabular}
+    \end{center}
+    \vspace{12pt}
+    在显著性水平 $\alpha=0.01$ 下, 临界值 $F_{1-\alpha}(k,n-k-1)=F_{0.99}(1,8)=11.26$, 由于 $49.47>11.26$, 因此拒绝 $H\text{H}_0$.
+    \item 由上表可得 $\hat{\sigma}_e^2=0.9457$.
+    \item $\textbf{X}_t=[1\;1.2]^{\text{T}}$, 
+    $\hat{Y}_t=\textbf{X}^{\text{T}}_t\hat{\beta}=0.5089$,
+    $Y_t$ 的双侧 $1-\alpha,\alpha=0.05$ 预测区间的上下限为
+    $\hat{Y}_t\pm \hat{\sigma}_e\sqrt{1+\textbf{X}_t^{\text{T}}\textbf{L}^{-1}\textbf{X}_tt_{1-\frac{\alpha}{2}}}=0.5089\pm 0.9724\sqrt{1+0.1005}\cdot2.3060=0.5089\pm 2.3523$
+    则有 $Y$ 的双侧 $95\%$ 的置信区间为 $[-1.7714, 2.9332]$
+        
+\end{enumerate}
+
+\vspace{12pt}
+
+
+46. 养猪场为了估算猪的毛重(单位: 公斤) $Y$ 与其身长(单位: 厘米) $x_1$, 肚围(单位: 厘米) $x_2$ 之间的关系, 测量了 $14$ 头猪, 得数据如下:
+
+\begin{center}
+    \begin{tabular}{c|cccccccccccccc}
+        \hline
+        $x_{i,1}$ & $41$ & $45$ & $51$ & $52$ & $59$ & $62$ & $69$ & $72$ & $78$ & $80$ & $90$ & $92$ & $98$ & $103$\\
+        \hline
+        $x_{i,2}$ & $49$ & $58$ & $62$ & $71$ & $62$ & $74$ & $71$ & $74$ & $79$ & $84$ & $85$ & $94$ & $91$ & $95$\\ 
+        \hline
+        $y_{i}$   & $28$ & $39$ & $41$ & $44$ & $43$ & $50$ & $51$ & $57$ & $63$ & $66$ & $70$ & $76$ & $80$ & $84$\\
+        \hline
+    \end{tabular}
+\end{center}
+
+\begin{enumerate}[(1)]
+    \item 求经验回归函数;
+    \item 在显著水平 $1\%$ 下, 检验 $H_0:\beta_1=\beta_2=0$;
+    \vspace{48pt}
+    \item 求 $x_1=100,\;x_2=80$ 时 $Y$ 的预测值;
+    \item 在显著水平 $5\%$ 下, 做偏 $F$ 检验, $H_{0j}:\beta_j=0,\;j=1,2$.
+\end{enumerate}
+
+这里, 假定猪的毛重 $Y\sim N(\beta_0+\beta_1x_1+\beta_2x_2,\sigma^2)$.
+
+\textbf{Sol}:  
+
+\begin{enumerate}[(1)]
+    \item 
+    易得 $\overline{x_{i1}}=\dfrac{496}{7}$, 
+    $\overline{x_{i2}}=\dfrac{1049}{14}$, 
+    $\bar{y}=\dfrac{396}{7}$, $l_{11}=\sum x_{i1}^2-14\overline{x_{i1}}^2=\dfrac{36762}{7}$, 
+    $l_{22}=\sum x_{i2}^2-14\overline{x_{i2}}^2=\dfrac{35713}{14}$, 
+    $l_{12}=l_{21}=\sum x_{i1}x_{i2}-14\overline{x_{i1}}\overline{x_{i2}}=\dfrac{24499}{7}$, 
+    $l_{1y}=\sum x_{i1}y_{i}-14\overline{x_{i1}}\bar{y}=\dfrac{30808}{7}$,
+    $l_{2y}=\sum x_{i2}y_i-14\overline{x_{i2}}\bar{y}=\dfrac{21256}{7}$.
+    
+    因此 $\begin{bmatrix}
+        \beta_1\\\beta_2
+    \end{bmatrix}=\begin{bmatrix}
+        l_{11}&l_{12}\\
+        l_{21}&l_{22}\\
+    \end{bmatrix}^{-1}\begin{bmatrix}
+        l_{1y}\\l_{2y}\\
+    \end{bmatrix}\approx\begin{bmatrix}
+        0.5223\\0.4738\\
+    \end{bmatrix}$
+    
+    且 $\beta_0=\bar{y}-\sum\beta_j\overline{x_{ij}}\approx -15.9384$, 因此得到经验回归公式为
+    $$
+    y= -15.9384 + 0.5223 x_{1} + 0.4738 x_2
+    $$
+
+    \item 
+    检验假设 $\text{H}_0 :\beta_1=\beta_2=0$,
+
+    \begin{center}
+        \begin{tabular}{c|c|c|cc}
+        \hline
+        来源   & 平方和   & 自由度 & \multicolumn{1}{c|}{均方和}   & F 值                    \\ \hline
+        回归系数 & 3737  & 2   & \multicolumn{1}{c|}{1869}  & \multirow{2}{*}{570.5} \\
+        残差   & 36.03 & 11  & \multicolumn{1}{c|}{3.276} &                        \\ \hline
+        总和   & 3773  & 13  &                            &                        \\ \hline
+        \end{tabular}
+    \end{center}
+    在显著水平 $\alpha=0.01$ 下, 临界值 $F_{1-\alpha}(k,n-k-1)=F_{0.99}(2,11)=7.206$, 由于 $570.5>7.206$, 因此拒绝 $\text{H}_0$.
+    
+    
+    \item 由(1)的经验回归公式可得 $Y=15.9384 + 0.5223 x_{1} + 0.4738 x_2=74.1956$
+
+    \item 在显著水平 $5\%$ 下, 做偏 $\text{F}$ 检验, $\text{H}_{0j}:\beta_{j}=0,\;j=1,2$. 由于 $SS_{rj}=\dfrac{\hat{beta}_j^2}{l^{(jj)}}$, 得 $SS_{r1}=122.7$, $SS_{r2}=49.07$, $SS_e=36.03$, 因此得到统计量 $F_j=\dfrac{SS_{rj}}{SS_e/(n-k-1)}=\dfrac{SS_{rj}}{3.276}$, 则有 $F_1=37.45$, $F_2=14.98$. 而 $F_{0.95}(2,11)=3.982$, $F_j>3.982$, 因而拒绝 $\text{H}_0:\beta_j=0,j=1,2$.
+\end{enumerate}
+
+\vspace{12pt}
+
+
+47. 下表给出了某种化工产品在三种不同浓度(单位: $\%$) 与四种不同温度(单位: ℃)下成品的得率, 且每对水平搭配做了两次试验的数据:
+
+\begin{center}
+    \begin{tabular}{c|c|c|c|c}
+        \hline
+        \diagbox{温度}{浓度} & $10$ & 24 & 38 & 52\\
+        \hline
+        $2$ & $10,\;14$ & $11,\;11$ & $13,\;9$ & $10,\;12$\\
+        $4$ & $9,\;7$ & $10,\;8$ & $7,\;11$ & $6,\;10$\\
+        $6$ & $5,\;11$ & $13,\;14$ & $12,\;13$ & $14,\;10$\\
+        \hline
+    \end{tabular}
+\end{center}
+
+假定数据赖子方差相等的正态总体.
+\begin{enumerate}[(1)]
+    \item 证明: 在显著水平 $25\%$ 下, 浓度与温度之间的交互效应对该种化工产品的得率无显著影响.
+    \item 问: 在显著性水平 $5\%$ 下, 浓度与温度分别对该种化工产品的得率有无显著影响?
+\end{enumerate}
+
+\textbf{Sol}:  
+
+\begin{enumerate}[(1)]
+    \item 根据表中数据，可得方差分析表如下
+    \begin{center}
+    \begin{tabular}{c|c|c|cc|c}
+    \hline
+    方差来源 & 平方和     & 自由度 & \multicolumn{1}{c|}{均方和}     & F 值  & P值     \\ \hline
+    温度   & 11.5    & 3   & \multicolumn{1}{c|}{3.8333}  & 0.71 & 0.5657 \\
+    浓度   & 44.333  & 2   & \multicolumn{1}{c|}{22.1667} & 4.09 & 0.0442 \\
+    交互效应 & 27      & 6   & \multicolumn{1}{c|}{4.5}     & 0.83 & 0.5684 \\
+    误差   & 65      & 12  & \multicolumn{1}{c|}{5.4167}  &      &        \\ \hline
+    总和   & 147.833 & 23  &                              &      &        \\ \hline
+    \end{tabular}
+    \end{center}
+根据显著性水平 $25\%$ 对照表中 $p$ 值 0.5684 可知, 浓度与温度之间的交互效应对该种化工产品的得率无显著影响. 
+\item 从表中可看出, 在显著性 $5\%$ 下, 浓度对该种化工产品的得率有显著影响, 与温度则无显著影响.
+\end{enumerate}
+
+\vspace{12pt}
+
