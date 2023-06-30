@@ -1,42 +1,42 @@
 
 
-31. 从两批电子元件中随机抽取一些样品，测得它们的电阻(单位:欧姆)如下： \par 
+31. 从两批电子元件中随机抽取一些样品, 测得它们的电阻(单位:欧姆)如下： \par 
 甲批: $0.140;\;0.138;\;0.143;\;0.142;\;0.144;\;0.137;\;$  \par
 乙批: $0.135;\;0.140;\;0.142;\;0.136;\;0.138;\;0.140;\;$
 
-假定这两批电子元件的电阻都服从正态分布，问在显著性水平 0.05 下，能否认为这两个正态总体的方差相等？
+假定这两批电子元件的电阻都服从正态分布, 问在显著性水平 0.05 下, 能否认为这两个正态总体的方差相等？
 
 \textbf{Sol}: 由所给数据可得 $\bar{x}=0.1407,\;\bar{y}=0.1385,\;s_1^2\approx7.867\times 10^{-6},\;s_2^2=7.1\times10^{-6}$.
 
 得到检验假设 $H_0:\sigma_1^2=\sigma_2^2,\quad H_1:\sigma_1^2\not=\sigma_2^2$.
 
-应用 $\text{F}$ 检验, 得到检验统计量的观测值为 $\dfrac{s_1^2}{s_2^2}=1.108$，而在显著水平 $\alpha=0.05$ 下，$F_{0.975}(5,5)=7.1464,\;F_{0.025}(5,5)=F^{-1}_{0.975}(5,5)=0.1399$. 显然 $0.1399<1.108<7.1464$，
+应用 $\text{F}$ 检验, 得到检验统计量的观测值为 $\dfrac{s_1^2}{s_2^2}=1.108$, 而在显著水平 $\alpha=0.05$ 下, $F_{0.975}(5,5)=7.1464,\;F_{0.025}(5,5)=F^{-1}_{0.975}(5,5)=0.1399$. 显然 $0.1399<1.108<7.1464$, 
 所以不能拒绝 $H_0$, 
 \mybox{可以认为这两个正态总体的方差相等}。
 
 
 \vspace{12pt}
 
-32. 电话交换台每分钟接到互换的次数服从 $\text{Poisson}$ 分布 $P(\lambda)$, 今观测了100个时段，每个时段一分钟，共有585次呼唤，问在显著性水平0.10下，能否认为该电环交换台每分钟接到互换的次数服从 $\lambda=6$ 的 $\text{Poisson}$ 分布?
+32. 电话交换台每分钟接到互换的次数服从 $\text{Poisson}$ 分布 $P(\lambda)$, 今观测了100个时段, 每个时段一分钟, 共有585次呼唤, 问在显著性水平0.10下, 能否认为该电环交换台每分钟接到互换的次数服从 $\lambda=6$ 的 $\text{Poisson}$ 分布?
 
 \textbf{Sol}: 检验假设 $H_0:\lambda=6,\;H_1:\lambda\not=6$.
 
-根据泊松分布，检验统计量的观测值为 $\bar{x}=5.85$, 
-由于 $n=100$ 较大，所以近似地有： $\sqrt{n}\dfrac{\bar{x}-E(x)}{s}\sim N(0;1)$
+根据泊松分布, 检验统计量的观测值为 $\bar{x}=5.85$, 
+由于 $n=100$ 较大, 所以近似地有： $\sqrt{n}\dfrac{\bar{x}-E(x)}{s}\sim N(0;1)$
 
-由 $\text{Poisson}$ 分布性质可得， $E(x)=\lambda,\;s=\sqrt{\lambda}$，因此检验统计量观测值为：$\sqrt{100}\dfrac{|5.85-6|}{\sqrt{6}}\approx0.6124$，又因为 $\alpha=0.1$，因此 $\u_{1-\frac{\alpha}{2}}=u_{0.95}\approx1.645$，显然 $1.645>0.6124$，所以不能拒绝 $H_0$。即可以认为\mybox{服从 $\lambda=6$ 的 $\text{Poisson}$ 分布}.
+由 $\text{Poisson}$ 分布性质可得, $E(x)=\lambda,\;s=\sqrt{\lambda}$, 因此检验统计量观测值为：$\sqrt{100}\dfrac{|5.85-6|}{\sqrt{6}}\approx0.6124$, 又因为 $\alpha=0.1$, 因此 $\u_{1-\frac{\alpha}{2}}=u_{0.95}\approx1.645$, 显然 $1.645>0.6124$, 所以不能拒绝 $H_0$。即可以认为\mybox{服从 $\lambda=6$ 的 $\text{Poisson}$ 分布}.
 
 
 
 
 \vspace{12pt}
 
-33. 设 $(X_1,X_2,\cdots,X_n)$ 是取自正态总体 $N(\mu;1)$ 的样本, 其中 $\mu$ 未知，要检验假设
+33. 设 $(X_1,X_2,\cdots,X_n)$ 是取自正态总体 $N(\mu;1)$ 的样本, 其中 $\mu$ 未知, 要检验假设
 
 $$
 H_0:\mu\geqslant0;\;H_1:\mu<0
 $$
-在显著性水平 $\alpha$ 下，采用拒绝域为
+在显著性水平 $\alpha$ 下, 采用拒绝域为
 
 $$
 W_1=\big\{(x_1,x_2,\cdots,x_n)\big|\sqrt{n}\cdot\bar{x}<-u_{1-\alpha}\big\}
@@ -45,7 +45,7 @@ $$
 
 \begin{enumerate}[(1)]
     \item 求这个 $u$ 检验的功效函数 $\beta(\mu)$
-    \item 当 $\alpha=0.05$时, 如果要求 $\mu\leqslant-0.1$ 时，这个 $u$ 检验的 $\text{\uppercase\expandafter{\romannumeral2}}$ 类风险不大于 0.05，那么样本容量 $n$ 至少应取多大?
+    \item 当 $\alpha=0.05$时, 如果要求 $\mu\leqslant-0.1$ 时, 这个 $u$ 检验的 $\text{\uppercase\expandafter{\romannumeral2}}$ 类风险不大于 0.05, 那么样本容量 $n$ 至少应取多大?
 \end{enumerate}
 
 \textbf{Sol}: 
@@ -59,15 +59,15 @@ $$
     =&P_{\mu}\big\{\sqrt{n}\cdot(\bar{X}-\mu)<-\mu_{1-\alpha}-\sqrt{n}\cdot\mu\big\}
     \end{aligned}
     $$
-    由于 $\bar{X}\sim N(\mu;\dfrac{1}{n})$, 故 $\sqrt{n}(\bar{X}-\mu)\sim N(0;1)$，所以记 $\Phi(x)$ 为标准正态分布 $N(0;1)$ 的分布函数，则有
+    由于 $\bar{X}\sim N(\mu;\dfrac{1}{n})$, 故 $\sqrt{n}(\bar{X}-\mu)\sim N(0;1)$, 所以记 $\Phi(x)$ 为标准正态分布 $N(0;1)$ 的分布函数, 则有
     $$
     \mybox{
         $\beta(\mu)=1-\Phi(u_{1-\alpha}+\sqrt{n}\cdot \mu),\;\mu\in\Theta=\{\mu_0;\mu_1\}$
     }.
     $$
     
-    \item 依题意 $1-\beta(\mu)\leqslant 0.05$，则 $\Phi(u_{1-\alpha}+\sqrt{n}\cdot \mu)\geqslant 1-\beta(\mu)$，
-    $\sqrt{n}\geqslant \dfrac{u_{1-\alpha}+\Phi^{-1}(1-\beta(\mu))}{\mu}=\dfrac{u_{0.95}+u_{0.95}}{0.1}\approx32.898$,$n\geqslant32.898^2\approx 1082.28$，即样本数量至少为 \mybox{1083} 个。
+    \item 依题意 $1-\beta(\mu)\leqslant 0.05$, 则 $\Phi(u_{1-\alpha}+\sqrt{n}\cdot \mu)\geqslant 1-\beta(\mu)$, 
+    $\sqrt{n}\geqslant \dfrac{u_{1-\alpha}+\Phi^{-1}(1-\beta(\mu))}{\mu}=\dfrac{u_{0.95}+u_{0.95}}{0.1}\approx32.898$,$n\geqslant32.898^2\approx 1082.28$, 即样本数量至少为 \mybox{1083} 个。
 \end{enumerate}
 
 \vspace{12pt}
