@@ -217,8 +217,24 @@ $$
 \end{aligned}
 $$
 
-均方误差 $r(t_1)=\dfrac{9}{25}S(X)$, $r(t_2)=\dfrac{23}{36}S(X)$, $r(t_3)=\dfrac{94}{196}S(X)$, 因此\mybox{无偏估计量 $t_1$ 方差最小}.
+
+均方误差 $r(t_1)=\dfrac{9}{25}S(X)$, $r(t_2)=\dfrac{7}{18}S(X)$, $r(t_3)=\dfrac{94}{196}S(X)$, 因此\mybox{无偏估计量 $t_1$ 方差最小}.
 \vspace{12pt}
 
+个人感觉更好的答案:\\
 
+$\begin{aligned}
+    &E(t_1)=E(\dfrac{2}{5}X_1+\dfrac{1}{5}X_2+\dfrac{2}{5}X_3)=\dfrac{2}{5}E(X_1)+\dfrac{1}{5}E(X_2)+\dfrac{2}{5}E(X_3)=E(X)\\
+    &E(t_2)=E(\dfrac{1}{6}X_1+\dfrac{1}{3}X_2+\dfrac{1}{2}X_3)=\dfrac{1}{6}E(X_1)+\dfrac{1}{3}E(X_2)+\dfrac{1}{2}E(X_3)=E(X)\\
+    &E(t_3)=E(\dfrac{1}{7}X_1+\dfrac{3}{14}X_2+\dfrac{9}{14}X_3)=\dfrac{2}{5}E(X_1)+\dfrac{1}{5}E(X_2)+\dfrac{2}{5}E(X_3)=E(X)\\
+\end{aligned}$
 
+因此上述式子为 $E(X)$ 的无偏估计量
+
+$\begin{aligned}
+    &D(t_1)=D(\dfrac{2}{5}X_1+\dfrac{1}{5}X_2+\dfrac{2}{5}X_3)=(\dfrac{4}{25}+\dfrac{1}{25}+\dfrac{4}{25})D(X)=\dfrac{9}{25}D(X)\\
+    &D(t_2)=D(\dfrac{1}{6}X_1+\dfrac{1}{3}X_2+\dfrac{1}{2}X_3)=(\dfrac{1}{36}+\dfrac{1}{9}+\dfrac{1}{4})D(X)=\dfrac{7}{18}D(X)\\
+    &D(t_3)=D(\dfrac{1}{7}X_1+\dfrac{3}{14}X_2+\dfrac{9}{14}X_3)=(\dfrac{1}{49}+\dfrac{9}{196}+\dfrac{81}{196})=\dfrac{47}{98}D(X)\\
+\end{aligned}$
+
+因此可知无偏估计量 $t_1$ 的方差最小.
