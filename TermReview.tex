@@ -142,4 +142,554 @@ $$
 其实这个思路和求矩阵的逆是一样的, $[A|I]\rightarrow P[A|I]=[H|P]$, 
 因此我们知道对 $[A|I]$ 做初等行变换, 使得 $A$ 变为 $H$ 即可得到所求的 $P$.
 
+变换的结果大致形式是 $\begin{bmatrix}
+    I&A\\
+    O&O\\
+\end{bmatrix}$, 比如 $\begin{bmatrix}
+    1&0&0&2&3\\
+    0&1&0&4&5\\
+    0&0&1&6&7\\
+    0&0&0&0&0\\
+\end{bmatrix}$, 如果没有零矩阵也很正常.
+
+\subsection*{8}
+
+求满秩分解, 答案形式为 $A=F\cdot G$, 
+先通过第7题的方法得到 阶梯型矩阵 $H$, 
+取非全零行作为 $G$, 然后我们根据 $G$ 的行数, 
+取 $A$ 的前几列作为 $F$ 即可, 如果不确定最后再验算一下即可.
+
+\subsection*{9}
+
+具体情况, 具体分析.
+
+\subsection*{10}
+
+记结论:
+
+\begin{enumerate}
+    \item 从 $N(\mu,\sigma^2)$ 中抽取容量为 $a,b$ 的相互独立的样本, 
+    均值变量为 $Y_a,Y_b$ 服从 $Y_a\sim N(\mu,\dfrac{\sigma^2}{a})$, 
+    $Y_b\sim N(\mu,\dfrac{\sigma^2}{b})$
+    \item 假设有两个正态分布 $X\sim N(\mu_1,\sigma_1^2), Y\sim N(\mu_2,\sigma_2^2)$, 
+    则有 $X+Y\sim N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2)$ 
+    和 $X-Y\sim N(\mu_1-\mu_2,\sigma_1^2+\sigma_2^2)$.
+    \item 若有 $X\sim N(\mu,\sigma^2)$, 
+    则有 $P(X<a)=P(\dfrac{X-\mu}{\sigma}<\dfrac{a-\mu}{\sigma})=\Phi(\dfrac{a-\mu}{\sigma})$.
+\end{enumerate}
+
+\subsection*{11}
+
+主要是记几个结论就行.
+
+\begin{enumerate}
+    \item 若 $X\sim N(0,1)$, 则有 $X^2\sim \chi^2(1)$, 自由度为1.
+    \item 若 $X^2,Y^2$ 相互独立, 且 $X^2\sim \chi^2(m)$, 
+    $Y^2\sim \chi^2(n)$, 则有 $X^2+Y^2\sim \chi^2(m+n)$. 
+    相减似乎没有什么结论. 括号里的是自由度.
+    \item 若 $X^2\sim\chi^2(a)$, $Y^2\sim\chi^2(b)$, 
+    则有 $\dfrac{X^2/a}{Y^2/b}\sim F(a,b)$ 为 $F$ 分布, 
+    第一自由度为 $a$, 第二自由度为 $b$.
+    \item 若 $F\sim F(a,b)$, 则有 $\dfrac{1}{F}\sim F(b,a)$.
+    \item $F_{\alpha}(a,b)=\dfrac{1}{F_{1-\alpha}(b,a)}$
+\end{enumerate}
+
+我们可以看哦, 标准正态分布平方是卡方分布($\chi^2$), 
+卡方分布相除是 $F$ 分布(不是简单的相除, 要先除以自己的自由度).
+
+\subsection*{12}
+
+构造增广矩阵 $\textbf{B}=[\textbf{A}|b]$, 进行初等行变换, 分析即可.
+
+\subsection*{13}
+
+用计算器进行估算即可. 模仿答案的格式即可.
+
+\subsection*{14}
+
+没什么好的通法, 具体情况具体分析, 会答案的就行.
+
+\subsection*{15}
+
+抽取容量为 $k$ 的样本, 问:
+
+\begin{enumerate}
+    \item 此样本最小值小于 $a$ 的概率是多小?
+    \item 此样本最大值大于 $b$ 的概率是多小?
+\end{enumerate}
+
+\begin{enumerate}
+    \item 直接求最小值小于 $a$ 的概率 $p=P(\min X_i<a)$ 比较难, 
+    但是我们可以求所有值都大于等于 $a$ 的概率, 
+    即 $p=1-\prod_{i=1}^kP(X_i\geqslant a)$, 
+    而可以进一步 $P(X_i\geqslant a)=1-P(X_i<a)$, 
+    因此 $p=1-\prod(1-P(X_i<a))$, 
+    又因为此题是从正态分布 $N(\mu,\sigma)$ 的总体中抽取样板的,
+    因此我们可以进一步化简 $P(X<a)=P(\dfrac{X-\mu}{\sigma}<\dfrac{a-\mu}{\sigma})=\Phi(\dfrac{a-\mu}{\sigma})$, 
+    因此得到结果 $p=1-(1-\Phi(\dfrac{a-\mu}{\sigma}))^k$.
+    \item 直接求最大值大于 $b$ 的概率 $p=P(\max X_i>b)$ 比较难, 
+    因此我们可以求所有值都小于等于 $b$ 的概率, 
+    即 $p=1-\prod_{i=1}^k P(X_i\leqslant b)$,
+    而可以进一步 $P(X_i\leqslant b)=P(\dfrac{X_i-\mu}{\sigma}\leqslant\dfrac{b-\mu}{\sigma})=\Phi(\dfrac{b-\mu}{\sigma})$, 
+    因此得到结果 $p=1-(\Phi(\dfrac{b-\mu}{\sigma}))^k$.
+\end{enumerate}
+
+
+\subsection*{16}
+
+不难, 和前面第4题的思路也差不多.
+
+\subsection*{17}
+
+首先我们要知道几个结论
+
+\begin{enumerate}
+    \item 实对称矩阵一定能对角化
+    \item 同一个矩阵不同特征值对应的特征向量互相正交
+\end{enumerate}
+
+因此做这题的时候, 我们先计算出特征值, 如果特征值都是一重的, 
+那么算出特征向量, 然后单位化, 拼在一起即可. 如果有多重的特征向量, 
+那么一个特征值对应的多个特征向量可以通过 $\text{Schmidt}$ 正交化去使其正交.
+
+例如对称方阵 $A$ 的特征值为 $\lambda_1,\lambda_2,\cdots,\lambda_n$, 
+对应的特征向量正交化单位化后为 $\eta_1,\eta_2,\cdots,\eta_n$, 
+那么有 $Q=[\eta_1\;\eta_2\;\cdots\;\eta_n]$ 为所求正交矩阵. 
+有 $Q^{-1}AQ=\begin{bmatrix}
+    \lambda_1 & & & \\
+    & \lambda_2 & & \\
+    & & \ddots & \\
+    & & & \lambda_n\\
+\end{bmatrix}$.
+
+\subsection*{18}
+
+两个矩阵 $A,B$ 相似, 则有
+
+\begin{enumerate}
+    \item $|A|=|B|$
+    \item $tr(A)=tr(B)$, $tr(A)$ 表示矩阵 $A$ 的迹, 就是主对角线元素的和.
+\end{enumerate}
+
+\subsection*{19}
+
+\begin{enumerate}
+    \item 用样本均值当成总体均值 $\alpha_1=E(X)=\bar{x}$
+    \item 用样本方差当成总体方差 $\alpha_2=S_x$
+    \item 通过 $E(x)=\int_{-\infty}^{+\infty}xf\text{d}x$ 去求出参数.
+\end{enumerate}
+
+
+\subsection*{20}
+
+求 $\mu$ 与 $\sigma^2$ 的极大似然估计, 过程:
+
+\begin{enumerate}
+    \item 设 $x_1,x_2,\cdots,x_n$ 为对应样本 $X_1,X_2,\cdots,X_n$ 的一组观测值.
+    \item 令似然函数为 $L=L(x_1,x_2,\cdots,x_n;\mu,\sigma^2)=\prod f(x_i;\mu,\sigma^2)$
+    \item 然后一般对 $L$ 取对数
+    \item 求 $\dfrac{\partial}{\partial \mu}L=\cdots=0$ 解出 $\mu$
+    \item 求 $\dfrac{\partial}{\partial \sigma^2}L=\cdots=0$ 解出 $\sigma^2=$ 一个关于 $x_i$ 的表达式
+    \item 上面两步不排除要联立求解.
+    \item 总结: $\mu$ 的最大似然估计量为 $\hat{\mu}=$ 一个关于 $X_i$ 的表达式, 就是把 $x_i$ 换成 $X_i$, $\sigma^2$ 同理.
+\end{enumerate}
+
+
+\subsection*{21}
+
+证明统计量是 $E(X)$ 的无偏估计量: 
+
+例如: $t=w_1X_1+\cdots+w_nX_n$
+
+$E(t)=w_1E(X)+\cdots+w_nE(X)=\sum w_iE(X)$, 
+若 $E(t)=E(X)$, 即 $\sum w_i=1$, 则 $t$ 是总体均值 $E(X)$ 的无偏估计量.
+
+计算方差
+
+$D(t)=\sum w_i^2D(X)$
+
+然后算出最小的, 你就知道谁的无偏估计方差最小了.
+
+\subsection*{22}
+
+只要会写出系数矩阵即可, 通过二次型写出系数矩阵 $A$, 
+系数矩阵一定是对称的, 因此可以求出正交矩阵 $Q$(上面讲过方法了), 
+然后经过的线性变换就是 $x=Qy$
+
+\subsection*{23}
+
+证明是正定矩阵, 就只用顺序主子式大于0即可. 比如 $A=\begin{bmatrix}
+    1 & 2 & 3 \\
+    2 & 5 & 6 \\
+    3 & 6 & 7 \\
+\end{bmatrix}$ 的顺序主子式为 $\begin{bmatrix}
+    1
+\end{bmatrix}$, $\begin{bmatrix}
+    1 & 2 \\
+    2 & 5 \\
+\end{bmatrix}$, $\begin{bmatrix}
+    1 & 2 & 3 \\
+    2 & 5 & 6 \\
+    3 & 6 & 7 \\
+\end{bmatrix}$ 这三个就为 $A$ 的顺序主子式, 应该看得出来什么意思.
+
+\subsection*{24}
+
+懒惰orz...
+
+\subsection*{25}
+
+懒惰orz...
+
+\subsection*{26}
+
+懒惰orz...
+
+\subsection*{27}
+
+求可逆矩阵 $P$ 使得 $P^{-1}AP$ 为 $\text{Jordan}$ 矩阵.
+
+
+1. 求 $A$ 的特征值和对应的特征向量
+
+有 $J=P^{-1}AP$, 则有 $AP=PJ$, 令 $P=(P_1,P_2,\cdots,P_k)$, 且 $\text{Jordan}$ 矩阵为
+
+$J=\begin{bmatrix}
+J_{n_1}(\lambda_1)&&\\
+&\cdots&\\
+&&J_{n_k}(\lambda_k)
+\end{bmatrix}$
+
+其中 $n_i$ 表示 $\text{Jordan}$ 标准型的阶数.
+
+然后有
+
+$A(P_1,P_2,\cdots,P_k)=(P_1,P_2,\cdots,P_k)\begin{bmatrix}
+J_{n_1}(\lambda_1)&&\\
+&\cdots&\\
+&&J_{n_k}(\lambda_k)
+\end{bmatrix}$
+
+因此有 $AP_i=P_iJ_{n_i}(\lambda_i)$
+
+其中 $P_i=(p_1^i,p_2^i,\cdots,p_{n_i}^i)$, $p_{k}^{i}$ 为一个列向量.
+
+因此 
+
+$A(p_1^i,p_2^i,\cdots,p_{n_i}^i)=(p_1^i,p_2^i,\cdots,p_{n_i}^i)\begin{bmatrix}
+\lambda_i&1&&&\\
+&\lambda_i&1&&\\
+&&\cdots&\cdots&\\
+&&&\lambda_i&1\\
+&&&&\lambda_i
+\end{bmatrix}$
+
+因此得到
+
+$\begin{cases}
+Ap_1^i=\lambda_ip_1^i\\
+Ap_2^i=\lambda_ip_2^i+p_1^i\\
+\quad\vdots\\
+Ap_{n_i}^i=\lambda_ip_{n_i}^i+p_{n_{i}-1}^i\\
+\end{cases}$
+
+得到结论
+
+2. $
+(A-\lambda_iI_n)p_{1}^i=0,\\
+(A-\lambda_iI_n)p_{j}^i=p_{j-1}^i,(j=2,3,\cdots,n)
+$
+
+因此第一个就是特征向量, 剩下的是一直迭代.
+
+要保证后面是要有解的
+
+3. 几何重数表示了以该特征值为特征值的 Jordan块的个数
+
+4. 设 $A$ 为 $n$ 阶方阵, $\lambda_i$ 为其特征值, 则 $A$ 的 Jordan 标准型 $J$ 中以 $\lambda_i$ 为特征值, 阶数为 $l$ 的 jordan 块的个数为 $r_{l+1}+r_{l-1}-2r_{l}$
+
+其中 $r_{l}=rank[(\lambda_iI-A)^l]$, $r_0=n$
+
+感觉4不需要考虑, 老师应该没这么恐怖.(3是为了确认老师没这么恐怖.)
+
+\subsection*{28}
+
+和第四题讲的差不多, 两种情况: 1. 矩阵可对角化. 2. 矩阵不可对角化. 
+实际上没啥区别, 不可对角化就是搞成 $\text{Jordan}$ 阵.
+
+结论: 
+\begin{enumerate}
+    \item 代数重数大于几何重数则矩阵无法对角化
+    \item 代数重数等于几何重数则可以对角化
+\end{enumerate}
+
+$A$ 的代数重数就是指的 $\lambda_i$ 的重数, 几何重数为 $n-rank(A-\lambda_iI)$.
+
+得到 $P^{-1}AP=J$, $J$ 为 $\text{Jordan}$ 阵, 运气好就是对角矩阵, 
+然后 $A=PJP^{-1}$, $A^k=PJ^kP^{-1}$, 不管怎么样都会简化很多.
+
+\subsection*{29}
+
+已知矩阵函数 $g(A)$, 那么就有特征函数 $g(\lambda)$,
+
+\begin{enumerate}
+    \item 方阵 $A$ 的特征多项式为 $f(\lambda)=|A-\lambda I|$
+    \item 通过矩阵函数 $g(A)$, 得到对应的特征多项式 $g(\lambda)$(就是把公式里的 $A$ 换成 $\lambda$)
+    \item 分解成 $g(\lambda)=q(\lambda)f(\lambda)+r(\lambda)$, 其中 $r(\lambda)$ 的阶数是要比 $f(\lambda)$ 的阶数小 $1$.
+    \item 假设 $f(\lambda)$ 为3阶的, 那么设 $r(\lambda)=a_0\lambda^2+a_1\lambda+a_2$.
+    \item 将特征值带入则有 $f(\lambda_i)=0$, 因此 $g(\lambda_i)=r(\lambda_i)$, 如果有重根就求导带入, 最终解出来系数.
+    \item 因此 $g(A)=a_0A^2+a_1A+a_2I$. 算出最后结果即可.
+\end{enumerate}
+
+注: 我们知道若 $a$ 是 $f(\lambda)$ 的 $k$ 重根, 那么 $f(a)=f'(a)=\cdots=f^{(k-1)}(a)=0$.
+
+\subsection*{30}
+
+我们先知道一个结论, 在工程数学考试中会让你求最小多项式的矩阵满足下面一个性质：最小多项式与矩阵的特征多项式有相同的根
+
+例如: $f(\lambda)=|A-\lambda I|=(\lambda-\lambda_1)^{\alpha_1}\cdots(\lambda-\lambda_k)^{\alpha_k}$
+
+则所求的最小多项式的形式为 $m(\lambda)=(\lambda-\lambda_1)^{\beta_1}\cdots(\lambda-\lambda_k)^{\beta_k}$
+
+其中 $0<\beta_i\leqslant\alpha_i$
+
+然后从最低阶开始慢慢往上, 计算 $(A-\lambda_1)^{1}\cdots(A-\lambda_k)^1$ 是否为零矩阵, 如果不为零, 则继续往上加数值, 直到第一个为零矩阵的数对
+
+(这里各位可能会有疑问, 但是别想那么多！老师大概率只会出 $f(\lambda)=(\lambda-k)^a$ 次方这种难度的, 所以就不考虑太多了.)
+
+\subsection*{31}
+
+这题和第25题差不多.
+
+\subsection*{32}
+
+老师说不考
+
+\subsection*{33}
+
+老师说不考
+
+\subsection*{34}
+
+验证矩阵 $A$ 为正规矩阵, 即满足 $A^{\text{H}}A=AA^{\text{H}}$ 即可(我考试的时候只写了一半啊啊啊啊)
+
+$A^{\text{H}}$ 表示 $A$ 的共轭转置, 表示先对所有元素取共轭后转置. 平时看的转置 $\text{T}$ 其实可以认为是一种退化.
+
+求酉矩阵 $U$ 使得  $U^{-1}AU$ 为对角矩阵, 即求出 $A$ 的特征值, 求处对应特征向量，然后单位化, 然后得到 $U=[\varepsilon_1\;\cdots\varepsilon_n]$
+
+注意:  
+
+\begin{enumerate}
+    \item 酉矩阵可以认为是拓展到复数的正交矩阵
+    \item 复数矩阵中的转置并不是单纯的转置, 都是共轭转置
+    \item 复数正交矩阵, 即酉矩阵, 即满足 $U^{H}U=UU^{H}=E$
+    \item 单位化复向量的时候, 除以的模是 $\sqrt{x^{\text{H}}\cdot x}$
+\end{enumerate}
+
+因为复数 $z=a+bi$ 的模长是$|z|=a^2+b^2$, 其中 $a,b$ 为实数
+
+上次说的伏笔就是这里, 在复数的情况下, 你判断两个向量 $x,y$ 是否正交, 
+不是用 $x^{\text{T}}\cdot y=0$ 而是 $x^{\text{H}}\cdot y=0$, 
+要注意这个共轭转置! (我考试的时候忘了, 验算了好多次! 后面才想起来...) 
+
+\subsection*{35}
+
+求方阵 $A$ 的谱半径, 算出 $A$ 的特征值. 谱半径就是模最大的, $\rho(A)=\max |\lambda_k|$.
+
+\subsection*{36}
+
+简单, 就是普通的高斯消去法加上了一个列主元，
+就是做高斯消去法的时候要找到当前列绝对值最大的那一项, 
+然后对应的那一行换到第一行.
+
+\subsection*{37}
+
+
+求方阵 $A$ 的 $e^{A}$ 和 $e^{At}$
+
+过程:  
+
+\begin{enumerate}
+    \item 求 $A$ 的特征值和特征向量 $\alpha_i$
+    \item 然后得到 $P=[\alpha_1\;\cdots\;\alpha_n]$
+    \item 得到 $\text{Jordan}$ 标准型 $J$
+    \item 得到 $A=PJP^{-1}$
+    \item 设 $f(x)=e^{x}$ 计算出 $e^{A}$
+    \item 设 $f(x)=e^{xt}$ 计算出 $e^{At}$, 这里我们认为 $t$ 是常数
+\end{enumerate}
+
+
+37题目解答:  
+
+1. $A$ 的特征值容易算为 $\lambda_1=\lambda_2=-1, \lambda_3=4$, 因此会有两个 Jordan 块, 对应 $\lambda_1=\lambda_2=-1$ 的特征向量为 $[1,\;0,\;-1]^{\text{T}},\;[\frac{4}{7},\;-\frac{5}{7},\;0]^{\text{T}}$, $\lambda_3$ 对应的特征向量为 $[3,\;0,\;2]^{\text{T}}$.
+
+2. 得到 $P=\begin{bmatrix}
+3&1&\frac{4}{7}\\
+0&0&-\frac{5}{7}\\
+2&-1&0\\
+\end{bmatrix}$
+
+3. 得到 Jordan 标准型 $J=\begin{bmatrix}
+4&&\\
+&-1&1\\
+&&-1\\
+\end{bmatrix}$
+
+4. 因此 $A=PJP^{-1}$
+
+5. $f(x)=e^{x}$, $f'(x)=e^{x}$, 
+因此 $f(A)=Pf(J)P^{-1}=P\begin{bmatrix}
+f(4)&&\\
+&f(-1)&\frac{1}{1!}f'(-1)\\
+&&f(-1)\\
+\end{bmatrix}P^{-1}=P\begin{bmatrix}
+e^{4}&&\\
+&e^{-1}&e^{-1}\\
+&&e^{-1}\\
+\end{bmatrix}P^{-1}$ 然后就是简单的矩阵乘法
+
+6. $f(x)=e^{xt}$, $f'(x)=te^{xt}$, 因此 $f(S)=Pf(J)P^{-1}=P\begin{bmatrix}
+f(4)&&\\
+&f(-1)&\frac{1}{1!}f'(-1)\\
+&&f(-1)\\
+\end{bmatrix}P^{-1}=P\begin{bmatrix}
+e^{4x}&&\\
+&e^{-t}&te^{-t}\\
+&&e^{-t}\\
+\end{bmatrix}P^{-1}$ 然后就是简单的矩阵乘法
+
+
+注:  
+1. 若 $A=\begin{bmatrix}
+J_1&&&\\
+&J_2&&\\
+&&\cdots&\\
+&&&J_k
+\end{bmatrix}$, 则 $f(A)=\begin{bmatrix}
+f(J_1)&&&\\
+&f(J_2)&&\\
+&&\cdots&\\
+&&&f(J_k)
+\end{bmatrix}$
+
+因为 $P^{-1}AP=J$, 有 $f(A)=Pf(J)P^{-1}$
+
+2. 对于每一个 $\text{Jordan}$ 块, 有 $f(J_i)=\begin{bmatrix}
+f(\lambda_i)&\dfrac{1}{1!}f'(\lambda_i)&\cdots&\dfrac{1}{(n-1)!}f^{(n-1)}(\lambda_i)\\
+&f(\lambda_i)&\cdots&\dfrac{1}{(n-2)!}f^{(n-2)}(\lambda_i)\\
+&&\cdots&\\
+&&&f(\lambda_i)\\
+\end{bmatrix}$
+
+\subsection*{38}
+
+老师说不考
+
+\subsection*{39}
+
+$\text{QR}$ 分解不考, 如果考证明方程组有解, 
+那就只要算出 $r(A)=r([A|b])$ 即可.
+
+\subsection*{40}
+
+奇异值分解
+
+预期结果 $A=U\Sigma V$
+
+对矩阵 $A$ 进奇异值分解: 
+
+\begin{enumerate}
+    \item 算出 $A^{H}A$ 的特征值 $\lambda_i$
+    \item $\sqrt{\lambda_i}$ 就为奇异值
+    \item 求出 $A^{H}A$ 对应的特征向量, 并单位化得到 $v_i$.
+    \item 得到 $V=[v_1\;\cdots\;v_n]$
+    \item 计算 $u_i=Av_i\Sigma_i^{-1}$, 
+    其中 $\Sigma_i$ 为 $v_i$ 对应的奇异值, 
+    即 $v_i$ 对应的特征值的算术平方根.
+    \item 得到 $U=[u_1\;\cdots\;u_n]$
+    \item $\Sigma$ 除了主对角线上是奇异值, 其他都是0.
+    \item 得到预期结果.
+\end{enumerate}
+
+\subsection*{41}
+
+求 $R_1$ 到 $R_2$ 的基变换矩阵 $P$, 即满足  $R_2=R_1P$, 
+因此只要算 $P=R_1^{-1}R_2$ 即可.
+
+求 $R_1,R_2$ 下相同坐标的所有向量, 即 $R_1x=R_2x$, 
+因此即 $(R_1-R_2)x=0$, 解出来即可
+
+
+\subsection*{42}
+
+知道在基 $R_1$ 下的变换矩阵 $A$, 求在基 $R_2$ 下的变换矩阵 $B$, 实际上就是先把这个变换矩阵变成基础的，再变成 $R_2$ 的, 
+
+\begin{enumerate}
+    \item $R_1^{-1}AR_1$ 变成以最普通的基
+    \item 然后再变换成以 $R_2$ 为基, 
+    得到 $B=R_2^{-1}R_1^{-1}AR_1R_2$, 
+    其实也可以求直接从 $R_1$ 到 $R_2$ 的变换, 
+    $P=R_1^{-1}R_2$, 然后得到 $B=P^{-1}AP$
+\end{enumerate}
+
+
+
+
+\subsection*{43}
+
+用盖氏圆判断特征值是否都为实数
+
+首先获得盖氏圆, 几阶方阵A就有几个盖氏圆, 每一行可以获得一个盖氏圆, 格式为
+
+$G_i=\{z||z-a_{ii}|\leqslant b_i\}$
+
+其中 $a_{ii}$ 是主对角线上的元素, $a_{ii}$ 是第 $i$ 行的第 $i$ 个元素, $G_i$ 代表第 $i$ 行得到的盖氏圆, 而 $b_i$ 代表第 $i$ 行除了 $a_{ii}$ 以外的元素的绝对值的和.
+
+\begin{enumerate}
+    \item 得到盖氏圆
+    \item  看看有多少个盖氏圆相交
+    \item 试着缩小盖氏圆的半径
+    \item 直到缩小到盖氏圆没有相交才能证明特征值都为实数
+\end{enumerate}
+
+缩小方法:
+
+\begin{enumerate}
+    \item 转置(不一定能缩小)
+    \item 通过 $P^{-1}AP$ 进行控制矩阵, 其中 $P$ 是对角矩阵, 
+    比如说我们希望第一行缩小十倍, 那么就是 $P$ 的第一个元素为0.1 或者10 
+\end{enumerate}
+
+
+
+
+\subsection*{44}
+
+就是设 $f(x)$ 等于迭代算式的右边部分, 然后进行求导, 
+判断如果在带入的值是小于1的, 那么则在这附近收敛.
+
+\subsection*{45}
+
+老师说不考
+
+\subsection*{46}
+
+老师说不考
+
+\subsection*{47}
+
+老师说不考
+
+\subsection*{48}
+
+给定计算表, 计算插值多项式, 实际上就是计算系数, 用行列式解就行.
+
+\subsection*{49}
+
+老师说不考
+
+\subsection*{50}
+
+老师说不考
+
 \end{document}
